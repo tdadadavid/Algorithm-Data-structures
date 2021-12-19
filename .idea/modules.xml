@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Algorithm &amp; Data sructure.iml" filepath="$PROJECT_DIR$/.idea/Algorithm &amp; Data sructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Algorithms/FindRepeatedNumber/FindRepeatedNumber.iml" filepath="$PROJECT_DIR$/Algorithms/FindRepeatedNumber/FindRepeatedNumber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hackerrank/Hackerrank.iml" filepath="$PROJECT_DIR$/Hackerrank/Hackerrank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Algorithms/InsertionSort/InsertionSort.iml" filepath="$PROJECT_DIR$/Algorithms/InsertionSort/InsertionSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Data structures/LinkedList/LinkedList.iml" filepath="$PROJECT_DIR$/Data structures/LinkedList/LinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Firecode.io/Non-repeated-value/Non-repeated-value.iml" filepath="$PROJECT_DIR$/Firecode.io/Non-repeated-value/Non-repeated-value.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Queue/Queue.iml" filepath="$PROJECT_DIR$/Queue/Queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Data structures/Stacks/Stacks.iml" filepath="$PROJECT_DIR$/Data structures/Stacks/Stacks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Data structures/TicTacToe/TicTacToe.iml" filepath="$PROJECT_DIR$/Data structures/TicTacToe/TicTacToe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Data structures/Trees/Trees.iml" filepath="$PROJECT_DIR$/Data structures/Trees/Trees.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Firecode.io/containsASCIcharacters/containsASCIcharacters.iml" filepath="$PROJECT_DIR$/Firecode.io/containsASCIcharacters/containsASCIcharacters.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recursion/recursion.iml" filepath="$PROJECT_DIR$/recursion/recursion.iml" />
+    </modules>
+  </component>
+</project>
