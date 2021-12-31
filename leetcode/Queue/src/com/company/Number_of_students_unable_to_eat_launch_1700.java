@@ -10,6 +10,7 @@ import java.util.Stack;
 public class Number_of_students_unable_to_eat_launch_1700 {
 
     public static void main(String[] args) {
+
         Queue<Integer> students = new ArrayDeque<>();
         students.offer(0);
         students.offer(1);
@@ -66,33 +67,5 @@ public class Number_of_students_unable_to_eat_launch_1700 {
 
 
 
-    /*  students and sandwich Explanation
 
-        0 => circular sandwich
-        1 = square sandwich
-
-        (a)
-        students = [ 0 , 1, 0 , 1 , 0] -> queue
-        sandwiches = [1 , 1, 0 , 1 , 0] -> stack
-
-        first-pass:     students = [1, 0 , 1 , 0 , 1], sandwiches = [1, 1, 0, 1, 0]
-        second-pass:    students = [0 , 1 ,0 , 1] , sandwiches = [1 , 0 , 1 , 0]
-        third-pass:     students = [1 , 0 , 1 , 0] , sandwiches = [1 , 0 , 1, 0]
-        from the third pass we see that every student will eat
-
-        (b)
-        students = [1,1,1,0,0,1]
-        sandwiches = [1,0,0,0,1,1]
-
-        first-pass:     students = [1,1,0,0,1] , sandwiches = [0,0,0,1,1]
-        second-pass:    students = [1,0,0,1,1] , sandwiches = [0,0,0,1,1]
-        third-pass:     students = [0,0,1,1,1] , sandwiches = [0,0,0,1,1]
-        fourth-pass:    students = [0,1,1,1] , sandwiches = [0,0,1,1]
-        fifth-pass:     students = [1,1,1]  , sandwiches = [0,1,1]
-        from the fifth pass we see that three students will not eat. (not 1)
-
-        result is 2 student did not eat
-
-        1. create an identifier for those who have interfaced with the snadwiches before
-    */
 }

@@ -1,6 +1,6 @@
 package com.company;
 
-public class Main {
+public class Stack_Main {
 
     public static void main(String[] args) {
         LinkedListStack<String> stack = new LinkedListStack<>();

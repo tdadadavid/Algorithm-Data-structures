@@ -1,6 +1,6 @@
 package com.company;
 
-public class Main {
+public class Tic_Tac_Toe {
 
     public static void main(String[] args) {
 	    TicTacToe ticTacToe = new TicTacToe();

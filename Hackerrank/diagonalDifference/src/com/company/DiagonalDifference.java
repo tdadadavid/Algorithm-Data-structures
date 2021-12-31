@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.List;
 
-public class Main {
+public class DiagonalDifference {
 
     public static void main(String[] args) {
 

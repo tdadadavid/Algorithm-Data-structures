@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Arrays;
 
-public class Main {
+public class BubbleSort_Main {
 
     public static void main(String[] args) {
         int[] scores = {9 , 3 , 120 , 5 , 34 , 2  , -1 , 88 , 0};

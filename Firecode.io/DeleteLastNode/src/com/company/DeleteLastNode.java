@@ -1,6 +1,6 @@
 package com.company;
 
-public class Main {
+public class DeleteLastNode {
 
     public static void main(String[] args) {
 

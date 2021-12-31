@@ -1,6 +1,6 @@
 package com.company;
 
-public class Main {
+public class LinkedList_Main {
 
     public static void main(String[] args) {
         DoubleLinkedList<Integer> doubleLinkedList = new DoubleLinkedList<>();

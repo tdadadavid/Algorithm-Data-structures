@@ -3,7 +3,7 @@ package com.company;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
-public class SinglyLinkedList<E> {
+public class SinglyLinkedList_2<E> {
     private class Node<E> {
         private Node next;
         private E value;

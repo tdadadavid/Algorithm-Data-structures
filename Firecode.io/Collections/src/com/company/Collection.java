@@ -1,10 +1,9 @@
 package com.company;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Main {
+public class Collection {
 
     public static void main(String[] args) {
 

@@ -2,6 +2,7 @@ package com.company;
 
 
 public class recursive {
+
     public static void main(String[] args) {
         int[] pancakes = {1, 0, 1, 0, 0};
         int[] students = {0, 1, 1, 0, 1};
@@ -41,9 +42,12 @@ public class recursive {
     private static int[] removeFirst(int[] list) {
         int len = list.length;
         int[] newList = {};
+
+        // check this out with Xhixhi
         for( int i = 1; i < len; i++) {
             newList[i] = list[i - 1];
         }
+
         return newList;
     }
 
