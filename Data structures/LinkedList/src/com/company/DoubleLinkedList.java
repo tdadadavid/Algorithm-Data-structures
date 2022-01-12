@@ -1,36 +1,21 @@
 package com.company;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-
 public class DoubleLinkedList<E> {
-    private class Node{
-        private Node next;
-        private Node prev;
-        private E value;
-
-        public Node(E element){
-            this.value = element;
-        }
-    }
-
     private Node header;
     private Node trailer;
     private Node head;
     private Node tail;
     private int size;
-
-    public DoubleLinkedList(){
+    public DoubleLinkedList() {
         this.header = new Node(null);
         this.trailer = new Node(null);
     }
 
-    public void addFirst(E element){
+    public void addFirst(E element) {
         Node newNode = new Node(element);
-        if (isEmpty()){
+        if (isEmpty()) {
             addIfEmpty(newNode);
-        }
-        else {
+        } else {
             header.next = newNode;
             newNode.prev = header;
             newNode.next = head;
@@ -41,7 +26,7 @@ public class DoubleLinkedList<E> {
         size++;
     }
 
-    public void addLast(E element){
+    public void addLast(E element) {
         Node newNode = new Node(element);
         if (isEmpty())
             addIfEmpty(newNode);
@@ -57,10 +42,10 @@ public class DoubleLinkedList<E> {
         size++;
     }
 
-    public void addBetween(E predecessor , E value){
+    public void addBetween(E predecessor, E value) {
     }
 
-    public E removeFirst(){
+    public E removeFirst() {
         if (isEmpty())
             return null;
 
@@ -74,7 +59,7 @@ public class DoubleLinkedList<E> {
         return tmpNode.value;
     }
 
-    public E removeLast(){
+    public E removeLast() {
         if (isEmpty())
             return null;
 
@@ -88,40 +73,40 @@ public class DoubleLinkedList<E> {
         return tmpNode.value;
     }
 
-    public E head(){
+    public E head() {
         if (isEmpty())
             return null;
         return head.value;
     }
 
-    public E tail(){
+    public E tail() {
         if (isEmpty())
             return null;
         return tail.value;
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 
-    public int indexOf(E element) throws IndexOutOfBoundsException{
+    public int indexOf(E element) throws IndexOutOfBoundsException {
         int index = 0;
         Node currentNode = head;
         while (currentNode != null)
-            if(currentNode.value == element)
+            if (currentNode.value == element)
                 return index;
-            else{
+            else {
                 currentNode = currentNode.next;
                 index++;
             }
         return -1;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return head == null;
     }
 
-    public void concatenate(DoubleLinkedList<E> otherLinkedList){
+    public void concatenate(DoubleLinkedList<E> otherLinkedList) {
         otherLinkedList.head.prev = tail;
         tail.next = otherLinkedList.head;
         otherLinkedList.tail.next = trailer;
@@ -130,7 +115,7 @@ public class DoubleLinkedList<E> {
     }
 
     private void addIfEmpty(Node newNode) {
-        head = tail =  newNode;
+        head = tail = newNode;
         head.prev = header;
         head.next = trailer;
         tail.prev = header;
@@ -138,6 +123,16 @@ public class DoubleLinkedList<E> {
         header.next = head;
         trailer.prev = tail;
         newNode.next = trailer;
+    }
+
+    private class Node {
+        private Node next;
+        private Node prev;
+        private E value;
+
+        public Node(E element) {
+            this.value = element;
+        }
     }
 
 

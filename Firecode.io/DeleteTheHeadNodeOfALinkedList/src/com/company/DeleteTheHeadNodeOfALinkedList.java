@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public class DeleteTheHeadNodeOfALinkedList {
+package com.company;
+
+public class DeleteTheHeadNodeOfALinkedList {
+    public static void main(String[] args) {
+
+    }
 }

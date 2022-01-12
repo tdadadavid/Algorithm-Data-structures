@@ -13,7 +13,7 @@ public class ContainsASCIICharacters {
     public static boolean areAllAsciiCharactersUnique(String str) {
         boolean flag = true;
 
-        if(str.isEmpty()){
+        if (str.isEmpty()) {
             flag = true;
         }
 
@@ -23,8 +23,8 @@ public class ContainsASCIICharacters {
         int end = letters.length - 1;
 
 
-        while(start < end){
-            if(str.charAt(start) == str.charAt(end)){
+        while (start < end) {
+            if (str.charAt(start) == str.charAt(end)) {
                 flag = false;
             }
             start++;
@@ -35,11 +35,11 @@ public class ContainsASCIICharacters {
     }
 
     // using set(since all elements ina set are unique)
-    public static boolean areAllASCIICharactersUnique(String str){
+    public static boolean areAllASCIICharactersUnique(String str) {
         Set<Character> hasSet = new HashSet<>(256);
 
-        for(Character character : str.toCharArray()){
-            if(hasSet.contains(character))
+        for (Character character : str.toCharArray()) {
+            if (hasSet.contains(character))
                 return false;
             hasSet.add(character);
         }

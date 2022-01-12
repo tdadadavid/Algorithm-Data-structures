@@ -4,36 +4,35 @@ import java.util.Arrays;
 
 public class Number_of_students_unable_to_eat_launch_2_1700 {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        int[] students = {1 , 0 , 0 , 1};   // 1, 0 , 0, 1
-        int[] sandwich = {0 , 1 , 0 , 1};   //  0 , 1 , 0 , 1
+        int[] students = {1, 0, 0, 1};   // 1, 0 , 0, 1
+        int[] sandwich = {0, 1, 0, 1};   //  0 , 1 , 0 , 1
 
-        int result = getNoOfStudentsLeft(students , sandwich);
+        int result = getNoOfStudentsLeft(students, sandwich);
         System.out.println(result + " left");
     }
 
-    private static int getNoOfStudentsLeft(int[] students , int[] sandwich){
+    private static int getNoOfStudentsLeft(int[] students, int[] sandwich) {
 
         int[] studentsNow = {};
         int[] studentsThen = {};
 
         int remainingStudent = 0;
 
-        for (int i = 0; i <= students.length -1;) {
+        for (int i = 0; i <= students.length - 1; ) {
 
             if (students[i] == sandwich[i]) {
 
                 students = shiftLeft(students);
                 sandwich = shiftLeft(sandwich);
-            }
-            else {
+            } else {
 
                 studentsThen = students;
                 students = goToTheBack(students);
                 studentsNow = students;
 
-                if (Arrays.equals(studentsNow , studentsThen)) {
+                if (Arrays.equals(studentsNow, studentsThen)) {
                     remainingStudent = studentsNow.length;
                     return remainingStudent;
                 }
@@ -41,40 +40,40 @@ public class Number_of_students_unable_to_eat_launch_2_1700 {
             }
         }
 
-        return  remainingStudent;
+        return remainingStudent;
     }
 
-    private static int[] shiftLeft(int[] values){
+    private static int[] shiftLeft(int[] values) {
 
-        int[] newValues = new int[values.length-1];
+        int[] newValues = new int[values.length - 1];
 
-        copyIntoNewArray(values , newValues);
+        copyIntoNewArray(values, newValues);
 
 
         return newValues;
     }
 
-    private static int[] goToTheBack(int[] students){
+    private static int[] goToTheBack(int[] students) {
 
         int firstStudent = students[0];
 
         int[] newOrderOfStudents = new int[students.length];
 
-        copyIntoNewArray(students , newOrderOfStudents);
+        copyIntoNewArray(students, newOrderOfStudents);
 
-        newOrderOfStudents[students.length-1] = firstStudent;
+        newOrderOfStudents[students.length - 1] = firstStudent;
 
-        return  newOrderOfStudents;
+        return newOrderOfStudents;
     }
 
     private static void copyIntoNewArray(int[] values, int[] newValues) {
 
         int index = 0;
-        int len = values.length -1;
+        int len = values.length - 1;
 
-        for (int i = 0; i <= len; i++){
+        for (int i = 0; i <= len; i++) {
 
-            if (index < len){
+            if (index < len) {
 
                 newValues[i] = values[index + 1];
 

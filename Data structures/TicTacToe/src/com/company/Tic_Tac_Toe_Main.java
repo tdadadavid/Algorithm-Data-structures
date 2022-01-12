@@ -1,23 +1,23 @@
 package com.company;
 
-public class Tic_Tac_Toe {
+public class Tic_Tac_Toe_Main {
 
     public static void main(String[] args) {
-	    TicTacToe ticTacToe = new TicTacToe();
+        TicTacToe ticTacToe = new TicTacToe();
 
         // first player is always x
-        ticTacToe.putMark(0 , 0); // X
-        ticTacToe.putMark(0 , 1); // O
-        ticTacToe.putMark(0 , 2); // X
-        ticTacToe.putMark(1 , 0); // O
-        ticTacToe.putMark(1 , 2); // X
-        ticTacToe.putMark(1 , 1); // O
-        ticTacToe.putMark(2 , 0); // X
-        ticTacToe.putMark(2 , 1); // O
-        ticTacToe.putMark(2 , 2); // X
+        ticTacToe.putMark(0, 0); // X
+        ticTacToe.putMark(0, 1); // O
+        ticTacToe.putMark(0, 2); // X
+        ticTacToe.putMark(1, 0); // O
+        ticTacToe.putMark(1, 2); // X
+        ticTacToe.putMark(1, 1); // O
+        ticTacToe.putMark(2, 0); // X
+        ticTacToe.putMark(2, 1); // O
+        ticTacToe.putMark(2, 2); // X
 
         int champion = ticTacToe.champion();
-        String outcome[] = {"O wins" , "Tie" , "X wins"};
+        String outcome[] = {"O wins", "Tie", "X wins"};
         /*
             if X wins then champion = 1 , outcome[1 + 1] => "X wins"
             if O wins then champion = -1 , outcome[1 + -1] => "O wins"

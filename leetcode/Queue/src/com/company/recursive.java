@@ -12,7 +12,7 @@ public class recursive {
     }
 
     private static int getNumberOfStudentsLeft(int[] pancake, int[] students) {
-        int [][] response = getNewSet(pancake, students, students.length);
+        int[][] response = getNewSet(pancake, students, students.length);
         int[] newPancakeList = response[0];
         int[] newStudentList = response[1];
         int newStudentListLength = newStudentList.length;
@@ -44,15 +44,15 @@ public class recursive {
         int[] newList = {};
 
         // check this out with Xhixhi
-        for( int i = 1; i < len; i++) {
+        for (int i = 1; i < len; i++) {
             newList[i] = list[i - 1];
         }
 
         return newList;
     }
 
-    private static int[] shiftBy1(int[] array){
-        return  array;
+    private static int[] shiftBy1(int[] array) {
+        return array;
     }
 }
 

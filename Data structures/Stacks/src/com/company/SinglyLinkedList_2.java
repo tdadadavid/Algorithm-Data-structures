@@ -4,20 +4,6 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class SinglyLinkedList_2<E> {
-    private class Node<E> {
-        private Node next;
-        private E value;
-
-        public Node(E value){
-            this.value = value;
-        }
-
-        public E NodeToString(){
-            return this.value;
-        }
-
-    }
-
     private Node head = null;
     private Node tail = null;
     private Node newNode;
@@ -25,10 +11,9 @@ public class SinglyLinkedList_2<E> {
 
     public void addFirst(E element) {
         newNode = new Node(element);
-        if (isEmpty()){
+        if (isEmpty()) {
             head = tail = newNode;
-        }
-        else{
+        } else {
             newNode.next = head; //new node is pointing to the former head now
             head = newNode; // head is now the new node added
         }
@@ -37,25 +22,24 @@ public class SinglyLinkedList_2<E> {
     }
 
     public void addLast(E element) {
-       newNode = new Node(element);
-       if(isEmpty())
+        newNode = new Node(element);
+        if (isEmpty())
             head = tail = newNode;
-       else {
-           tail.next = newNode;
-           tail = newNode;
-       }
+        else {
+            tail.next = newNode;
+            tail = newNode;
+        }
 
-       size++;
+        size++;
     }
 
     public E removeFirst() throws NoSuchElementException {
         Node tmpNode = head;
-        if(isEmpty() )
+        if (isEmpty())
             throw new NoSuchElementException();
-        else if(head == tail){
+        else if (head == tail) {
             head = tail = null;
-        }
-        else {
+        } else {
             tmpNode = head;
             head = head.next;
         }
@@ -64,11 +48,11 @@ public class SinglyLinkedList_2<E> {
         return (E) tmpNode.value;
     }
 
-    public void removeLast() throws NoSuchElementException{
+    public void removeLast() throws NoSuchElementException {
         if (isEmpty())
             throw new NoSuchElementException();
 
-        if (head == tail){
+        if (head == tail) {
             head = tail = null;
             return;
         }
@@ -80,16 +64,16 @@ public class SinglyLinkedList_2<E> {
         size--;
     }
 
-    public void rotate(){
-       Node tmp = head;
-       Node previous = getPreviousNode(tail);
-       head = tail;
-       tail = previous;
-       tail.next = null;
-       head.next = tmp;
+    public void rotate() {
+        Node tmp = head;
+        Node previous = getPreviousNode(tail);
+        head = tail;
+        tail = previous;
+        tail.next = null;
+        head.next = tmp;
     }
 
-    public boolean contains(E element){
+    public boolean contains(E element) {
         return indexOf(element) != -1;
 
         // my solution
@@ -108,20 +92,20 @@ public class SinglyLinkedList_2<E> {
 //        return false;
     }
 
-    public int indexOf(E element) throws IndexOutOfBoundsException{
+    public int indexOf(E element) throws IndexOutOfBoundsException {
         int index = 0;
         Node thisNode = head;
         while (thisNode != null)
-            if(thisNode.value == element)
+            if (thisNode.value == element)
                 return index;
-            else{
+            else {
                 thisNode = thisNode.next;
                 index++;
             }
-    return -1;
+        return -1;
     }
 
-    public int size(){
+    public int size() {
         return size;
 
         //My solution
@@ -135,15 +119,15 @@ public class SinglyLinkedList_2<E> {
 //    return count;
     }
 
-    public String toArray(){
-        if(isEmpty())
+    public String toArray() {
+        if (isEmpty())
             throw new NullPointerException("No element in the list");
 
         E array[] = (E[]) new Object[size];
         int length = 0;
 
         var currentNode = this.head;
-        while (currentNode != null ){
+        while (currentNode != null) {
             array[length++] = (E) currentNode.value;
             currentNode = currentNode.next;
         }
@@ -155,7 +139,7 @@ public class SinglyLinkedList_2<E> {
 
         var previousNode = head;
         var currentNode = head.next;
-        while (currentNode != null){
+        while (currentNode != null) {
             var tmpNode = currentNode.next;
             currentNode.next = previousNode;
             previousNode = currentNode;
@@ -167,10 +151,10 @@ public class SinglyLinkedList_2<E> {
         head = previousNode;
     }
 
-    public E getKthNodeFromTheEnd(int k){
+    public E getKthNodeFromTheEnd(int k) {
         if (isEmpty()) throw new IllegalStateException();
 
-        if(k > size) throw new IllegalArgumentException();
+        if (k > size) throw new IllegalArgumentException();
 
         Node first = head;
         Node second = head;
@@ -179,7 +163,7 @@ public class SinglyLinkedList_2<E> {
         for (int i = 0; i < k - 1; i++)
             second = second.next;
 
-        while (second != tail){
+        while (second != tail) {
             first = first.next;
             second = second.next;
         }
@@ -187,18 +171,32 @@ public class SinglyLinkedList_2<E> {
         return (E) first.value;
     }
 
-    private Node getPreviousNode(Node node){
+    private Node getPreviousNode(Node node) {
         Node currentNode = head;
 
-        while (currentNode != null){
-            if(currentNode.next == node) return currentNode;
+        while (currentNode != null) {
+            if (currentNode.next == node) return currentNode;
             currentNode = currentNode.next;
         }
         return null;
     }
 
-    protected boolean isEmpty(){
+    protected boolean isEmpty() {
         return this.head == null;
+    }
+
+    private class Node<E> {
+        private Node next;
+        private E value;
+
+        public Node(E value) {
+            this.value = value;
+        }
+
+        public E NodeToString() {
+            return this.value;
+        }
+
     }
 
 }

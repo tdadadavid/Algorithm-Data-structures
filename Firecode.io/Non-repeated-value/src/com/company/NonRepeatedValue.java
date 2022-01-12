@@ -75,7 +75,7 @@ public class NonRepeatedValue {
          */
 
 
-        int[] numbers = {1 , 1, 2, 2,  3, 3, 4, 4, 5, 5};
+        int[] numbers = {1, 1, 2, 2, 3, 3, 4, 4, 5, 5};
 
 
         // best solution O(log n) time complexity
@@ -83,44 +83,43 @@ public class NonRepeatedValue {
         int end = numbers.length - 1;
         int mid;
 
-        while(start <= end){
-            mid  = (end - start) / 2;
+        while (start <= end) {
+            mid = (end - start) / 2;
 
 
             // check if we just have one item in the array
-            if(start == end) {
+            if (start == end) {
                 System.out.println(numbers[start] + " is the unique number");
                 break;
             }
 
             // check the boundary values for unique number
-            if(numbers[start] != numbers[start + 1]) {
+            if (numbers[start] != numbers[start + 1]) {
                 System.out.println(numbers[start] + " is the unique number");
                 break;
             }
 
-            if(numbers[end] != numbers[end - 1]) {
+            if (numbers[end] != numbers[end - 1]) {
                 System.out.println(numbers[end] + " is the unique number");
                 break;
             }
 
 
             // check if the middle is the unique number
-            if(numbers[mid] != numbers[mid + 1])
-                if(numbers[mid] != numbers[mid - 1]) {
+            if (numbers[mid] != numbers[mid + 1])
+                if (numbers[mid] != numbers[mid - 1]) {
                     System.out.println(numbers[mid] + " is the unique number");
                     break;
                 }
 
             // check whether the unique number is to the right
-            if(numbers[mid] == numbers[mid + 1] && mid % 2 == 0)
+            if (numbers[mid] == numbers[mid + 1] && mid % 2 == 0)
                 start = mid + 2;
 
             // check whether the unique number is to the left
-            if(numbers[mid] == numbers[mid - 1] && (mid - 1) % 2 == 1)
+            if (numbers[mid] == numbers[mid - 1] && (mid - 1) % 2 == 1)
                 end = mid - 2;
         }
-
 
 
         // if there is no duplicate nkor?

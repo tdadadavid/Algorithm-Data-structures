@@ -9,7 +9,7 @@ public class Stack<E> {
     private int top = -1;
     private int arraySize;
 
-    public Stack(int size){
+    public Stack(int size) {
         this.arraySize = size;
         this.array = (E[]) new Object[arraySize];
     }
@@ -21,18 +21,18 @@ public class Stack<E> {
         array[index++] = element;
     }
 
-    public E pop(){
+    public E pop() {
         if (index == 0)
             throw new IllegalStateException();
 
         return array[--index];
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return index == 0;
     }
 
-    public E peek(){
+    public E peek() {
         if (index == 0)
             throw new IllegalStateException();
 
@@ -40,8 +40,8 @@ public class Stack<E> {
     }
 
     @Override
-    public String toString(){
-        var content = Arrays.copyOfRange(array , 0  , index);
-       return Arrays.toString(content);
+    public String toString() {
+        var content = Arrays.copyOfRange(array, 0, index);
+        return Arrays.toString(content);
     }
 }

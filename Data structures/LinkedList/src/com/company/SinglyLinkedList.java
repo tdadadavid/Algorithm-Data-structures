@@ -4,20 +4,6 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class SinglyLinkedList {
-    private class Node {
-        private Node next;
-        private int value;
-
-        public Node(int value){
-            this.value = value;
-        }
-
-        public int NodeToString(){
-            return this.value;
-        }
-
-    }
-
     private Node head = null;
     private Node tail = null;
     private Node newNode;
@@ -25,10 +11,9 @@ public class SinglyLinkedList {
 
     public void addFirst(int element) {
         newNode = new Node(element);
-        if (isEmpty()){
+        if (isEmpty()) {
             head = tail = newNode;
-        }
-        else{
+        } else {
             newNode.next = head; //new node is pointing to the former head now
             head = newNode; // head is now the new node added
         }
@@ -37,35 +22,34 @@ public class SinglyLinkedList {
     }
 
     public void addLast(int element) {
-       newNode = new Node(element);
-       if(isEmpty())
+        newNode = new Node(element);
+        if (isEmpty())
             head = tail = newNode;
-       else {
-           tail.next = newNode;
-           tail = newNode;
-       }
+        else {
+            tail.next = newNode;
+            tail = newNode;
+        }
 
-       size++;
+        size++;
     }
 
     public void removeFirst() throws NoSuchElementException {
-        if(isEmpty() )
+        if (isEmpty())
             throw new NoSuchElementException();
-        else if(head == tail){
+        else if (head == tail) {
             head = tail = null;
-        }
-        else {
+        } else {
             head = head.next;
         }
 
         size--;
     }
 
-    public void removeLast() throws NoSuchElementException{
+    public void removeLast() throws NoSuchElementException {
         if (isEmpty())
             throw new NoSuchElementException();
 
-        if (head == tail){
+        if (head == tail) {
             head = tail = null;
             return;
         }
@@ -77,16 +61,16 @@ public class SinglyLinkedList {
         size--;
     }
 
-    public void rotate(){
-       Node tmp = head;
-       Node previous = getPreviousNode(tail);
-       head = tail;
-       tail = previous;
-       tail.next = null;
-       head.next = tmp;
+    public void rotate() {
+        Node tmp = head;
+        Node previous = getPreviousNode(tail);
+        head = tail;
+        tail = previous;
+        tail.next = null;
+        head.next = tmp;
     }
 
-    public boolean contains(int element){
+    public boolean contains(int element) {
         return indexOf(element) != -1;
 
         // my solution
@@ -105,20 +89,20 @@ public class SinglyLinkedList {
 //        return false;
     }
 
-    public int indexOf(int element) throws IndexOutOfBoundsException{
+    public int indexOf(int element) throws IndexOutOfBoundsException {
         int index = 0;
         Node thisNode = this.head;
         while (thisNode != null)
-            if(thisNode.value == element)
+            if (thisNode.value == element)
                 return index;
-            else{
+            else {
                 thisNode = thisNode.next;
                 index++;
             }
-    return -1;
+        return -1;
     }
 
-    public int size(){
+    public int size() {
         return size;
 
         //My solution
@@ -132,15 +116,15 @@ public class SinglyLinkedList {
 //    return count;
     }
 
-    public String toArray(){
-        if(isEmpty())
+    public String toArray() {
+        if (isEmpty())
             throw new NullPointerException("No element in the list");
 
         int array[] = new int[size];
         int length = 0;
 
         var currentNode = this.head;
-        while (currentNode != null ){
+        while (currentNode != null) {
             array[length++] = currentNode.value;
             currentNode = currentNode.next;
         }
@@ -152,7 +136,7 @@ public class SinglyLinkedList {
 
         var previousNode = head;
         var currentNode = head.next;
-        while (currentNode != null){
+        while (currentNode != null) {
             var tmpNode = currentNode.next;
             currentNode.next = previousNode;
             previousNode = currentNode;
@@ -164,10 +148,10 @@ public class SinglyLinkedList {
         head = previousNode;
     }
 
-    public int getKthNodeFromTheEnd(int k){
+    public int getKthNodeFromTheEnd(int k) {
         if (isEmpty()) throw new IllegalStateException();
 
-        if(k > size) throw new IllegalArgumentException();
+        if (k > size) throw new IllegalArgumentException();
 
         Node first = head;
         Node second = head;
@@ -176,7 +160,7 @@ public class SinglyLinkedList {
         for (int i = 0; i < k - 1; i++)
             second = second.next;
 
-        while (second != tail){
+        while (second != tail) {
             first = first.next;
             second = second.next;
         }
@@ -184,18 +168,32 @@ public class SinglyLinkedList {
         return first.value;
     }
 
-    private Node getPreviousNode(Node node){
+    private Node getPreviousNode(Node node) {
         Node currentNode = head;
 
-        while (currentNode != null){
-            if(currentNode.next == node) return currentNode;
+        while (currentNode != null) {
+            if (currentNode.next == node) return currentNode;
             currentNode = currentNode.next;
         }
         return null;
     }
 
-    private boolean isEmpty(){
+    private boolean isEmpty() {
         return this.head == null;
+    }
+
+    private class Node {
+        private Node next;
+        private int value;
+
+        public Node(int value) {
+            this.value = value;
+        }
+
+        public int NodeToString() {
+            return this.value;
+        }
+
     }
 
 }

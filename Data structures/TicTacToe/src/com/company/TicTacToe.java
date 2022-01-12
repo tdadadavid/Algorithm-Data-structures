@@ -4,30 +4,30 @@ public class TicTacToe {
     public static final int X = 1;
     public static final int O = -1;
     public static final int EMPTY = 0;
-    private int board[][] = new  int[3][3];
+    private int board[][] = new int[3][3];
     private int player;
 
 
-    public TicTacToe(){
+    public TicTacToe() {
         clearBoard();
     }
 
     // clearing the board
     private void clearBoard() {
-        for(int i = 0; i <= 2; i++){
-            for (int j = 0; j <= 2; j++){
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <= 2; j++) {
                 board[i][j] = EMPTY;
             }
         }
-    player = X;
+        player = X;
     }
 
     //test cases (1 ,2 ) (1,3)
-    public void putMark(int i , int j) throws IllegalArgumentException {
-        if((i > 2) || (i < 0) || (j > 2) || (j < 0)){
+    public void putMark(int i, int j) throws IllegalArgumentException {
+        if ((i > 2) || (i < 0) || (j > 2) || (j < 0)) {
             throw new IllegalArgumentException("Invalid board position");
         }
-        if(board[i][j] != EMPTY){
+        if (board[i][j] != EMPTY) {
             throw new IllegalArgumentException("Board position is occupied at " + i + " , " + j);
         }
 
@@ -36,23 +36,22 @@ public class TicTacToe {
     }
 
 
-
     // 3 0r -3 is the determinant whether a player wins
-    private boolean isWin(int player){
+    private boolean isWin(int player) {
         /*
             if the player is X(1) the player's mark is gonna be 3
             or else the player's mark is gonna be -3
          */
-        int playerMark = player*3;
+        int playerMark = player * 3;
         return (
-                    board[0][0] + board[1][0] + board[2][0] == playerMark
-                ||  board[0][1] + board[1][1] + board[2][1] == playerMark
-                ||  board[0][2] + board[1][2] + board[2][2] == playerMark
-                ||  board[0][0] + board[0][1] + board[0][2] == playerMark
-                ||  board[1][0] + board[1][1] + board[1][2] == playerMark
-                ||  board[2][0] + board[2][1] + board[2][2] == playerMark
-                ||  board[0][0] + board[1][1] + board[2][2] == playerMark
-                ||  board[0][2] + board[1][1] + board[2][0] == playerMark
+                board[0][0] + board[1][0] + board[2][0] == playerMark
+                        || board[0][1] + board[1][1] + board[2][1] == playerMark
+                        || board[0][2] + board[1][2] + board[2][2] == playerMark
+                        || board[0][0] + board[0][1] + board[0][2] == playerMark
+                        || board[1][0] + board[1][1] + board[1][2] == playerMark
+                        || board[2][0] + board[2][1] + board[2][2] == playerMark
+                        || board[0][0] + board[1][1] + board[2][2] == playerMark
+                        || board[0][2] + board[1][1] + board[2][0] == playerMark
         );
     }
 
@@ -65,29 +64,29 @@ public class TicTacToe {
         if (isWin(O))
             winner = O;
 
-        if(isWin(X) && isWin(X))
+        if (isWin(X) && isWin(X))
             winner = 0;
 
         return winner;
     }
 
-    public String current_state_of_the_board(){
+    public String current_state_of_the_board() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i = 0; i < 2; i++){
-            for (int j = 0; j < 2; j++){
-                switch (board[i][j]){
-                    case X :
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                switch (board[i][j]) {
+                    case X:
                         stringBuilder.append("X");
                         break;
-                    case O :
+                    case O:
                         stringBuilder.append("O");
                         break;
                     case EMPTY:
                         stringBuilder.append("");
                         break;
                 }
-                if(j < 2) stringBuilder.append("|");
+                if (j < 2) stringBuilder.append("|");
             }
             if (i < 2) stringBuilder.append("\n-----\n");
         }

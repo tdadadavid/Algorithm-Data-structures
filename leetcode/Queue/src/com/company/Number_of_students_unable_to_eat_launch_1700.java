@@ -1,9 +1,6 @@
 package com.company;
 
-import java.text.CharacterIterator;
-import java.text.StringCharacterIterator;
 import java.util.ArrayDeque;
-import java.util.Arrays;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -28,7 +25,7 @@ public class Number_of_students_unable_to_eat_launch_1700 {
         int size = 0;
 
 
-        while (!students.isEmpty()){ // while the student queue is not empty
+        while (!students.isEmpty()) { // while the student queue is not empty
             Object[] prevStudentList = students.toArray();
             Object[] currentStudentList;
 
@@ -38,8 +35,7 @@ public class Number_of_students_unable_to_eat_launch_1700 {
             if (student == sandwich) {                          // if the student wants the sandwich at the top
                 students.poll();                                // remove the student from the queue
                 sandwiches.pop();                               // remove the sandwich from the stack
-            }
-            else {                                              // if the student doesn't want the sandwich at the top
+            } else {                                              // if the student doesn't want the sandwich at the top
                 students.offer(students.poll());                // let the student go to the back
             }
 
@@ -63,9 +59,6 @@ public class Number_of_students_unable_to_eat_launch_1700 {
         }
 
     }
-
-
-
 
 
 }
