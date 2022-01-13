@@ -9,6 +9,7 @@ public class FlipAnImageOnItsHorizontalAxis {
         System.out.println(flippedImage);
     }
 
+    // my code
     public static String flipAnImage(int[][] image){
 
         for (int i = 1; i <= image.length -1; i++){
