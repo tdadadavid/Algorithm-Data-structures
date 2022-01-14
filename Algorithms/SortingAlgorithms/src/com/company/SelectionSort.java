@@ -12,7 +12,7 @@ public class SelectionSort {
      */
 
     public static void main(String[] args){
-        int[] unsortedArr = {2,5,11,1,6,};
+        int[] unsortedArr = {2,5,11,1,6};
         System.out.println(Arrays.toString(selectionSort(unsortedArr)));
     }
 
