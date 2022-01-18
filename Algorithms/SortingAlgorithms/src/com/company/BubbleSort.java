@@ -34,9 +34,9 @@ public class BubbleSort {
     }
 
     // Implement the recursive form for bubble sort
-//    public static int[] recursiveBubbleSort(int[] unsrotedArr){
-//
-//    }
+    public static int[] recursiveBubbleSort(int[] unsortedArr){
+        // condition for breaking the recursion
+    }
 
 
 

@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class FlipAnImageOnItsHorizontalAxis {
     public static void main(String[] args) {
         int[][] image = {{255,255,255},  {0,0,0}};
-        String flippedImage = flipImage(image);
-        System.out.println(flippedImage);
+        int[][] flippedImage = flipImage1(image);
+        System.out.println(Arrays.deepToString(flippedImage));
     }
 
     // my code
@@ -19,6 +19,19 @@ public class FlipAnImageOnItsHorizontalAxis {
         }
 
         return Arrays.deepToString(image);
+    }
+
+    // my code ... second way .. it think it is better
+    public static int[][] flipImage1(int[][] image){
+        int[][] flippedImage = new int[image.length][image[0].length];
+        int count = image.length-1;
+
+        for (int[] i : image){
+            flippedImage[count] = i;
+            count--;
+        }
+
+        return flippedImage;
     }
 
     // someone else code
