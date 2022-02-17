@@ -1,14 +1,11 @@
 package com.company;
 
-import java.text.CharacterIterator;
-import java.text.StringCharacterIterator;
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class LC290_StringPattern {
     public static void main(String[] args){
-        String word = "acbc";
-        String sentence = "dog fish dog dog";
+        String word = "abbc";
+        String sentence = "dog dog dog dog";
         System.out.println(isThereAPattern(word, sentence));
 
     }
@@ -19,13 +16,16 @@ public class LC290_StringPattern {
         char[] wordArr = word.toCharArray();
         String[] sentenceArr = sentence.split(" ");
 
+        if (wordArr.length != sentenceArr.length)
+            return false;
+
         HashMap<Character , String> hashPattern = new HashMap<>();
 
         for (int i = 0; i < wordArr.length; i++){
             char key = wordArr[i];
-            if (hashPattern.containsKey(key)) {
-                String sentenceEquivalent = sentenceArr[i];
+            String sentenceEquivalent = sentenceArr[i];
 
+            if (hashPattern.containsKey(key)) {
 
                 String value = hashPattern.get(key);
 
@@ -33,8 +33,11 @@ public class LC290_StringPattern {
                     return false;
 
             }
-            else
-                hashPattern.put(wordArr[i] , sentenceArr[i]);
+            else {
+                if(hashPattern.containsValue(sentenceEquivalent))
+                    return false;
+                hashPattern.put(wordArr[i], sentenceArr[i]);
+            }
         }
 
         return true;
