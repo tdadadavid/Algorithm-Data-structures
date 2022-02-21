@@ -15,7 +15,7 @@ public class BubbleSort {
     public static void main(String[] args) {
 
         int[] unsortedArr = {1,5,11,6,2};
-        System.out.println(Arrays.toString(bubbleSort(unsortedArr)));
+        recursiveBubbleSort(unsortedArr , unsortedArr.length);
 
     }
 
@@ -34,8 +34,20 @@ public class BubbleSort {
     }
 
     // Implement the recursive form for bubble sort
-    public static int[] recursiveBubbleSort(int[] unsortedArr){
+    public static void recursiveBubbleSort(int[] unsortedArr , int lenOfArr){
         // condition for breaking the recursion
+        if (lenOfArr == 1)
+            return;
+
+        for (int i = 1; i < lenOfArr-1; i++){
+            if (unsortedArr[i] > unsortedArr[i+1]){
+                int temp = unsortedArr[i];
+                unsortedArr[i] = unsortedArr[i + 1];
+                unsortedArr[i + 1] = temp;
+            }
+        }
+
+        recursiveBubbleSort(unsortedArr , lenOfArr-1);
     }
 
 
