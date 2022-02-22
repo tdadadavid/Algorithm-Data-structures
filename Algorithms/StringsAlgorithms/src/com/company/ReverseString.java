@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ReverseString {
     public static void main(String[] args) {
-        String word = "";
+        String word = "Trees";
         System.out.println(reverseStrings(word));
     }
 
