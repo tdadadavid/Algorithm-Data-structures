@@ -6,6 +6,8 @@ public class FindTheMinSumForSubArrayOfSizeK {
         System.out.println(findMinSum(nums , 2));
     }
 
+    // time complexity = O(n)
+    // space complexity = O(1)
     private static int findMinSum(int[] nums , int k){
         // it is the same max question
 

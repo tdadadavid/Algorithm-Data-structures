@@ -3,6 +3,7 @@ package com.company;
 import java.util.Arrays;
 
 public class HashMap {
+
     private class Node {
 
         int key;
@@ -26,6 +27,7 @@ public class HashMap {
     public void put(Integer key , String value){
 
         int hash = this.hash(key);
+
         int hashIndex = this.hash(key) & (this.nodes.length -1);
 
         if (nodes[hashIndex] != null)
@@ -42,14 +44,17 @@ public class HashMap {
 
         Node currentNode = nodes[hashIndex];
 
-        // Using the chaining procedure (check out chaining  procedure for HashMap)
+        // Using the chaining procedure
+        // (check out chaining  procedure for HashMap)
         while (currentNode != null) {
 
             // compare the hash and key, if they're equal return
             if (currentNode.hash == hash && currentNode.key == key)
                 return currentNode.value;
             else
-                // if they're not equal , check if it's next pointer has a value and repeat the process
+                // if they're not equal , check if it's
+                // next pointer has a value and repeat
+                // the process
                 currentNode = currentNode.next;
         }
 

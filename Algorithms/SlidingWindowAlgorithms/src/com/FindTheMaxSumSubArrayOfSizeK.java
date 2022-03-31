@@ -9,6 +9,7 @@ public class FindTheMaxSumSubArrayOfSizeK {
     // Time complexity = O(n)...
     // Space complexity = O(1)
     private static int findMaxSum(int[] nums , int k){
+
         // iterate to the end of the array
         // by sliding a window of length k
         // compare each window sum and store
@@ -36,12 +37,9 @@ public class FindTheMaxSumSubArrayOfSizeK {
 
                 // remove the first element in the particular window
                 // because the window is sliding forward by 1 leaving
-                // that element behind
-                currentRunningSum -= nums[windowStart];
-
-                // increment the window start ie. move the starting point
-                // of the window forward
-                windowStart++;
+                // that element behind .. increment the window start
+                // ie. move the starting point of the window forward
+                currentRunningSum -= nums[windowStart++];
             }
 
             // add to the current sum of the window

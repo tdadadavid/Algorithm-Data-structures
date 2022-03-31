@@ -3,7 +3,7 @@ package com.company;
 import java.util.Arrays;
 
 public class Add3DArray {
-    public static void main() {
+    public static void main(String[] args) {
         int[][][] firstArr = {{{1, 2}, {3, 4}}, {{5, 6}, {7, 8}}};
         int[][][] secondArr = {{{9, 10}, {11, 12}}, {{13, 14}, {15, 16}}};
 

@@ -1,8 +1,6 @@
 package com.company;
 
-import java.util.Arrays;
-
-public class MaximumSubArrayOfSizeK {
+public class MaximumSumSubArrayOfSizeK {
     public static void main(String[] args){
         int[] testcase1 = {2,1,5,1,3};
         int maxSum = maxSum(testcase1 , 3);

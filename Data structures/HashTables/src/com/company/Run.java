@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.LinkedList;
-
 public class Run {
     public static void main(String[] args) {
         HashMap map = new HashMap();

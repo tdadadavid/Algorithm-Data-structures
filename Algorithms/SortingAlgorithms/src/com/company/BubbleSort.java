@@ -19,6 +19,7 @@ public class BubbleSort {
 
     }
 
+    // time complexity = O(n²)
     public static int[] bubbleSort(int[] unsortedArr){
 
         for (int i = 0; i <= unsortedArr.length - 1; i++) {
