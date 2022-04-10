@@ -4,9 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Algorithms.iml" filepath="$PROJECT_DIR$/.idea/Algorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/FindRepeatedNumber/FindRepeatedNumber.iml" filepath="$PROJECT_DIR$/FindRepeatedNumber/FindRepeatedNumber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GreedyAlgorithms/GreedyAlgorithms.iml" filepath="$PROJECT_DIR$/GreedyAlgorithms/GreedyAlgorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/SlidingWindowAlgorithms/SlidingWindowAlgorithms.iml" filepath="$PROJECT_DIR$/SlidingWindowAlgorithms/SlidingWindowAlgorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/SortingAlgorithms/SortingAlgorithms.iml" filepath="$PROJECT_DIR$/SortingAlgorithms/SortingAlgorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/StringsAlgorithms/StringsAlgorithms.iml" filepath="$PROJECT_DIR$/StringsAlgorithms/StringsAlgorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TwoPointersAlgorithms/TwoPointersAlgorithms.iml" filepath="$PROJECT_DIR$/TwoPointersAlgorithms/TwoPointersAlgorithms.iml" />
     </modules>
   </component>
 </project>
