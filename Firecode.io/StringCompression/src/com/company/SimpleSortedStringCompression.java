@@ -3,22 +3,36 @@ package com.company;
 import java.util.HashMap;
 
 public class SimpleSortedStringCompression {
+    public String compress2(String input){
 
-    public static void main(String[] args){
-        String input1 = "AAAAaaabbbbbcccc";
-        String input2 = "aabbbbccc";
-        String input3 = "abc";
-        String input4 = "aabbbcddddeeeeef";
+        int count = 1;
+        StringBuilder builder = new StringBuilder();
 
-//        System.out.println("first: " + compress( input1));
-//        System.out.println("second: " + compress2(input1));
-//        System.out.println("first: " + compress(input2));
-//        System.out.println("second:" + compress2(input2));
-//        System.out.println("first: " +compress( input3));
-//        System.out.println("second:" + compress2(input3));
-//        System.out.println("second:" + compress2(input4));
-        System.out.println(compressString(input1));
+        for (int i = 0; i < input.length() - 1; i++){
+
+            if (input.charAt(i) == input.charAt(i+1)) count++;
+            else {
+
+                if (count<= 1)
+                    builder.append(input.charAt(i));
+                else
+                    builder.append(input.charAt(i))
+                           .append(count);
+
+                count = 1;
+            }
+        }
+
+        if (count <= 1)
+            builder.append(input.charAt(input.length()-1));
+        else
+            builder.append(input.charAt(input.length()-1))
+                   .append(count);
+
+        return String.valueOf(builder);
     }
+
+
 
     private static String compress(String input){
 
@@ -48,34 +62,8 @@ public class SimpleSortedStringCompression {
         return String.valueOf(builder);
     }
 
-    private static String compress2(String input){
 
-        int count = 1;
-        StringBuilder builder = new StringBuilder();
 
-        for (int i = 1; i < input.length()+1; i++){
-
-            if (i == input.length()) {
-                if (count <= 1)
-                    builder.append(input.charAt(i - 1));
-                else
-                    builder.append(input.charAt(i - 1)).append(count);
-            }
-            else {
-                if (input.charAt(i) == input.charAt(i - 1))
-                    count++;
-                else {
-                    if (count <= 1)
-                        builder.append(input.charAt(i - 1));
-                    else
-                        builder.append(input.charAt(i - 1)).append(count);
-                    count = 1;
-                }
-            }
-        }
-
-        return String.valueOf(builder);
-    }
 
     // this is more readable than this upper one
     private static String compressString(String input) {

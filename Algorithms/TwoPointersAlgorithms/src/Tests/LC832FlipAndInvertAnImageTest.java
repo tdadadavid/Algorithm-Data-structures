@@ -1,5 +1,6 @@
-package com.company;
+package Tests;
 
+import com.company.LC832_FlipAndInvertAnImage;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

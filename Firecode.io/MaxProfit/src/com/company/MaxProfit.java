@@ -62,6 +62,7 @@ public class MaxProfit {
         int min = prices[0];
         int maxProfit = 0;
 
+        // come back for this
         for (int i = 0; i < prices.length; i++){
             if ((prices[i] - min) > maxProfit)
                 maxProfit = prices[i] - min;
