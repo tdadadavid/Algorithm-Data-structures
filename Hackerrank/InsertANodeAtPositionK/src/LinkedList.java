@@ -1,5 +1,3 @@
-import com.company.SinglyLinkedListNode;
-
 public class LinkedList {
     public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position) {
 
@@ -63,6 +61,28 @@ public class LinkedList {
         newHead.next = previousHead; // for readability sake
 
         return newHead;
+    }
+
+    public static SinglyLinkedListNode deleteNode(SinglyLinkedListNode llist, int position) {
+        // check if the linkedlist is null
+        if(llist  == null)
+            return null;
+
+        if(position == 0)
+            return llist.next;
+
+        int count = 0;
+        SinglyLinkedListNode currentNode = llist;
+
+        while(currentNode != null){
+            if(count == position-1){
+                currentNode.next = currentNode.next.next;
+            }
+
+            count++;
+            currentNode = currentNode.next;
+        }
+        return llist;
     }
 }
 

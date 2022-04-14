@@ -1,5 +1,3 @@
-package com.company;
-
 public class SinglyLinkedList {
     public SinglyLinkedListNode head;
     public SinglyLinkedListNode tail;
