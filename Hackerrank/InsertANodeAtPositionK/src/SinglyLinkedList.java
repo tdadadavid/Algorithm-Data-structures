@@ -7,7 +7,7 @@ public class SinglyLinkedList {
         this.tail = null;
     }
 
-    public void insertNode(int nodeData) {
+    public SinglyLinkedListNode insertNode(int nodeData) {
         SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
 
         if (this.head == null) {
@@ -17,5 +17,7 @@ public class SinglyLinkedList {
         }
 
         this.tail = node;
+
+        return this.head;
     }
 }

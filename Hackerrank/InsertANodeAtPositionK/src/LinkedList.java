@@ -1,4 +1,9 @@
 public class LinkedList {
+    SinglyLinkedList node;
+    public LinkedList(SinglyLinkedList node){
+        this.node  = node;
+    }
+
     public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position) {
 
         // if head the null return the data as the head
@@ -64,7 +69,7 @@ public class LinkedList {
     }
 
     public static SinglyLinkedListNode deleteNode(SinglyLinkedListNode llist, int position) {
-        // check if the linkedlist is null
+        // check if the linked-list is null
         if(llist  == null)
             return null;
 
@@ -83,6 +88,34 @@ public class LinkedList {
             currentNode = currentNode.next;
         }
         return llist;
+    }
+
+    public SinglyLinkedListNode reverse(SinglyLinkedListNode head) {
+        if(head == null)
+            return null;
+
+        SinglyLinkedListNode currentNode = head;
+        SinglyLinkedListNode previousNode = null;
+        SinglyLinkedListNode temporaryNode;
+
+        while(currentNode != null){
+            // store the address of the next node "first"
+            // because it would be lost as current node points to previous node
+            temporaryNode = currentNode.next;
+            // reverse the current node to point to previous node
+            currentNode.next = previousNode;
+            // move the previous node to the current node
+            previousNode = currentNode;
+            // move the current node to the next node
+            // since we stored the address of the next
+            // node  we can move forward
+            currentNode = temporaryNode;
+        }
+
+        // make the head pointer point to the reversed list
+        head = previousNode;
+
+        return head;
     }
 }
 
