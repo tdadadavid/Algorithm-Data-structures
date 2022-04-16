@@ -8,7 +8,10 @@ class LinkedListTest {
     void itReversesTheList(){
         var list = new SinglyLinkedList();
 
-        SinglyLinkedListNode head = list.insertNode(10);
+        SinglyLinkedListNode head
+                = list.insertNode(10);
+
+
         list.insertNode(20);
         list.insertNode(30);
         list.insertNode(40);
@@ -17,9 +20,9 @@ class LinkedListTest {
         list.insertNode(70);
 
         var test = new LinkedList(list);
-        test.reverse(head);
+        SinglyLinkedListNode node = test.reverse(head);
 
-        assertEquals(list.head.data, list.tail.data);
+        assertEquals(node.data , list.tail.data);
     }
 
 }

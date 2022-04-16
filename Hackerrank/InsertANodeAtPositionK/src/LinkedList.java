@@ -100,7 +100,8 @@ public class LinkedList {
 
         while(currentNode != null){
             // store the address of the next node "first"
-            // because it would be lost as current node points to previous node
+            // because it would be lost as current node points to previous
+            // node
             temporaryNode = currentNode.next;
             // reverse the current node to point to previous node
             currentNode.next = previousNode;
@@ -117,6 +118,34 @@ public class LinkedList {
 
         return head;
     }
+
+    public void reversePrint(SinglyLinkedListNode head) {
+        // check if the head is empty
+        if (head == null)
+            return;
+
+        // reverse the linked-list
+        SinglyLinkedListNode reversedNode = this.reverse(head);
+
+        // iterate through the reversed list and print out every
+        // node's data
+        while (reversedNode != null){
+            System.out.println(reversedNode.data);
+            reversedNode = reversedNode.next;
+        }
+
+    }
+
+    // RECURSIVE SOLUTION (CAN BE VERY COSTLY)
+    public void recursiveReversePrint(SinglyLinkedListNode head){
+        // check if the head is not null
+        if (head == null)
+            return;
+
+        recursiveReversePrint(head.next);
+        System.out.println(head.data);
+    }
+
 }
 
 
