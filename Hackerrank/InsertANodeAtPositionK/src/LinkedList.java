@@ -91,8 +91,7 @@ public class LinkedList {
     }
 
     public SinglyLinkedListNode reverse(SinglyLinkedListNode head) {
-        if(head == null)
-            return null;
+        if(head == null) return null;
 
         SinglyLinkedListNode currentNode = head;
         SinglyLinkedListNode previousNode = null;
@@ -100,8 +99,7 @@ public class LinkedList {
 
         while(currentNode != null){
             // store the address of the next node "first"
-            // because it would be lost as current node points to previous
-            // node
+            // because it would be lost as current node points to  previous node
             temporaryNode = currentNode.next;
             // reverse the current node to point to previous node
             currentNode.next = previousNode;
@@ -119,16 +117,16 @@ public class LinkedList {
         return head;
     }
 
-    public void reversePrint(SinglyLinkedListNode head) {
+    public void IterativeReversePrint(SinglyLinkedListNode head) {
+
         // check if the head is empty
-        if (head == null)
-            return;
+        if (head == null) return;
 
         // reverse the linked-list
         SinglyLinkedListNode reversedNode = this.reverse(head);
 
-        // iterate through the reversed list and print out every
-        // node's data
+        // iterate through the reversed list and print
+        // out every node's data
         while (reversedNode != null){
             System.out.println(reversedNode.data);
             reversedNode = reversedNode.next;
@@ -139,11 +137,54 @@ public class LinkedList {
     // RECURSIVE SOLUTION (CAN BE VERY COSTLY)
     public void recursiveReversePrint(SinglyLinkedListNode head){
         // check if the head is not null
-        if (head == null)
-            return;
+        if (head == null) return;
 
         recursiveReversePrint(head.next);
         System.out.println(head.data);
+    }
+
+    public boolean compareLists(SinglyLinkedListNode list1, SinglyLinkedListNode list2){
+
+        // if "both" lists are null return true
+        if(list1 == null && list2 == null) return true;
+
+        // if "either" of the list is null return false
+        if (list1 == null || list2 == null) return false;
+
+        while (list1 != null && list2 != null){
+
+            // if the node's data are not the same return false
+            if (list1.data != list2.data) return false;
+
+            // check if the lists are of equal length
+            if (list1.next == null && list2.next != null)
+                return false;
+
+            if (list1.next != null && list2.next == null)
+                return false;
+
+            list1 = list1.next;
+            list2 = list2.next;
+        }
+
+        return true;
+    }
+
+
+
+
+
+    public boolean compareList2(
+            SinglyLinkedListNode headA,
+            SinglyLinkedListNode headB
+    ){
+
+        while( headA != null && headB != null && headA.data == headB.data){
+            headA = headA.next;
+            headB = headB.next;
+        }
+
+        return headA == headB;
     }
 
 }
