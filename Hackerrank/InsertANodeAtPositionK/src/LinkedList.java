@@ -171,13 +171,7 @@ public class LinkedList {
     }
 
 
-
-
-
-    public boolean compareList2(
-            SinglyLinkedListNode headA,
-            SinglyLinkedListNode headB
-    ){
+    public boolean compareList2(SinglyLinkedListNode headA, SinglyLinkedListNode headB){
 
         while( headA != null && headB != null && headA.data == headB.data){
             headA = headA.next;
@@ -185,6 +179,25 @@ public class LinkedList {
         }
 
         return headA == headB;
+    }
+
+    public static int getNodeData(SinglyLinkedListNode head, int positionFromTail){
+
+        int count = 0;
+        SinglyLinkedListNode slowPointer = head;
+        SinglyLinkedListNode fastPointer = head;
+
+        while (count  < positionFromTail){
+            fastPointer = fastPointer.next;
+            count++;
+        }
+
+        while (fastPointer.next != null) {
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next;
+        }
+
+        return slowPointer.data;
     }
 
 }
