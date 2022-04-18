@@ -183,13 +183,14 @@ public class LinkedList {
 
     public static int getNodeData(SinglyLinkedListNode head, int positionFromTail){
 
-        int count = 0;
+        int twoPointerDistance = 0;
         SinglyLinkedListNode slowPointer = head;
         SinglyLinkedListNode fastPointer = head;
 
-        while (count  < positionFromTail){
+
+        while (twoPointerDistance  < positionFromTail){
             fastPointer = fastPointer.next;
-            count++;
+            twoPointerDistance++;
         }
 
         while (fastPointer.next != null) {
