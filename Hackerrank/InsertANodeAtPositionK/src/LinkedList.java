@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedList {
     SinglyLinkedList node;
     public LinkedList(SinglyLinkedList node){
@@ -181,14 +184,14 @@ public class LinkedList {
         return headA == headB;
     }
 
-    public static int getNodeData(SinglyLinkedListNode head, int positionFromTail){
+    public int getNodeData(SinglyLinkedListNode head, int positionFromTail){
 
         int twoPointerDistance = 0;
         SinglyLinkedListNode slowPointer = head;
         SinglyLinkedListNode fastPointer = head;
 
 
-        while (twoPointerDistance  < positionFromTail){
+        while (twoPointerDistance < positionFromTail){
             fastPointer = fastPointer.next;
             twoPointerDistance++;
         }
@@ -199,6 +202,35 @@ public class LinkedList {
         }
 
         return slowPointer.data;
+    }
+
+    public SinglyLinkedListNode mergeLists(SinglyLinkedListNode firstHead, SinglyLinkedListNode secondHead){
+
+        return firstHead;
+
+    }
+
+    public boolean hasCycle(SinglyLinkedListNode head){
+        // check if its null
+        if (head == null)
+            return false;
+
+
+        // use  hashset
+        Set<SinglyLinkedListNode> visitedNodes = new HashSet<>();
+
+        // iterate through the list
+        while (head != null){
+            // if the hashset contains a value return true
+            if (visitedNodes.contains(head))
+                return true;
+
+            visitedNodes.add(head);
+            head = head.next;
+        }
+
+        // else return false
+        return false;
     }
 
 }
