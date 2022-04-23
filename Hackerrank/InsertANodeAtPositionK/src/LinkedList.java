@@ -204,22 +204,34 @@ public class LinkedList {
         return slowPointer.data;
     }
 
+
+
     public SinglyLinkedListNode removeDuplicates(SinglyLinkedListNode head) {
 
         if(head == null) return null;
 
+
         SinglyLinkedListNode referenceNode = head;
 
+        // while the next node is not null
         while (head.next != null){
 
-            if (head.data == head.next.data)
+            // if the current node value is equal to the next node value
+            if (head.data == head.next.data) {
+                // delete the next node
                 head.next = head.next.next;
-            else
+            }
+            else {
+                // else move the head to the next node
                 head = head.next;
+            }
         }
 
         return referenceNode;
     }
+
+
+
 
 
     public boolean hasCycle(SinglyLinkedListNode head){
@@ -264,7 +276,6 @@ public class LinkedList {
 
         return false;
     }
-
 
 
 }
