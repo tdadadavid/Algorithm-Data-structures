@@ -204,11 +204,23 @@ public class LinkedList {
         return slowPointer.data;
     }
 
-    public SinglyLinkedListNode mergeLists(SinglyLinkedListNode firstHead, SinglyLinkedListNode secondHead){
+    public SinglyLinkedListNode removeDuplicates(SinglyLinkedListNode head) {
 
-        return firstHead;
+        if(head == null) return null;
 
+        SinglyLinkedListNode referenceNode = head;
+
+        while (head.next != null){
+
+            if (head.data == head.next.data)
+                head.next = head.next.next;
+            else
+                head = head.next;
+        }
+
+        return referenceNode;
     }
+
 
     public boolean hasCycle(SinglyLinkedListNode head){
         // check if its null
@@ -216,12 +228,12 @@ public class LinkedList {
             return false;
 
 
-        // use  hashset
+        // use  hashset to store visited nodes
         Set<SinglyLinkedListNode> visitedNodes = new HashSet<>();
 
         // iterate through the list
         while (head != null){
-            // if the hashset contains a value return true
+            // if the hashset contains the node return true
             if (visitedNodes.contains(head))
                 return true;
 
@@ -232,6 +244,28 @@ public class LinkedList {
         // else return false
         return false;
     }
+
+
+    public boolean hasCycle2(SinglyLinkedListNode head){
+        if(head == null)
+            return false;
+
+        SinglyLinkedListNode hare = head;
+        SinglyLinkedListNode tortoise = head;
+
+        while (hare != null && hare.next != null){
+
+            tortoise = tortoise.next;
+            hare = hare.next.next;
+
+            if (hare == tortoise)
+                return true;
+        }
+
+        return false;
+    }
+
+
 
 }
 
