@@ -278,7 +278,10 @@ public class LinkedList {
         return false;
     }
 
-    public Object findMergeNode(SinglyLinkedListNode firstList, SinglyLinkedListNode secondList){
+
+
+
+    public SinglyLinkedListNode findMergeNode(SinglyLinkedListNode firstList, SinglyLinkedListNode secondList){
 
         SinglyLinkedListNode firstPointer =  firstList;
         SinglyLinkedListNode secondPointer = secondList;
@@ -288,18 +291,57 @@ public class LinkedList {
             if (firstPointer == null)
                 firstPointer = secondList;
             else
+                firstPointer = firstPointer.next;
 
             if (secondPointer == null)
                 secondPointer = firstList;
-
-            firstPointer = firstPointer.next;
-            secondPointer = secondPointer.next;
+            else
+                secondPointer = secondPointer.next;
             
         }
         
         return firstPointer;
     }
 
+
+
+
+
+
+
+    // the better approach
+    // Space complexity = O(1)
+    public SinglyLinkedListNode findMergeNode2(SinglyLinkedListNode firstList, SinglyLinkedListNode secondList){
+
+        SinglyLinkedListNode firstPointer =  firstList;
+        SinglyLinkedListNode secondPointer = secondList;
+
+        int lengthOfListA = findLength(firstList);
+        int lengthOfListB = findLength(firstList);
+
+        if (lengthOfListB > lengthOfListA){
+            secondPointer = secondPointer.next;
+        }
+
+        while(firstPointer != secondPointer){
+            firstList = firstPointer.next;
+            secondPointer = secondPointer.next;
+
+        }
+
+        return firstPointer;
+    }
+
+    public static int findLength(SinglyLinkedListNode listNode){
+        int length = 0;
+
+        while (listNode != null){
+            length++;
+            listNode = listNode.next;
+        }
+
+        return length;
+    }
 
 
 
