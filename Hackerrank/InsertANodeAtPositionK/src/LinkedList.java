@@ -2,10 +2,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class LinkedList {
-    SinglyLinkedList node;
-    public LinkedList(SinglyLinkedList node){
-        this.node  = node;
-    }
 
     public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position) {
 
@@ -234,6 +230,7 @@ public class LinkedList {
 
 
 
+    // A SOLUTION BUT NOT OPTIMAL WAY
     public boolean hasCycle(SinglyLinkedListNode head){
         // check if its null
         if (head == null)
@@ -258,6 +255,10 @@ public class LinkedList {
     }
 
 
+
+
+
+    // THE OPTIMAL SOLUTION
     public boolean hasCycle2(SinglyLinkedListNode head){
         if(head == null)
             return false;
@@ -276,6 +277,30 @@ public class LinkedList {
 
         return false;
     }
+
+    public Object findMergeNode(SinglyLinkedListNode firstList, SinglyLinkedListNode secondList){
+
+        SinglyLinkedListNode firstPointer =  firstList;
+        SinglyLinkedListNode secondPointer = secondList;
+        
+        while(firstPointer != secondPointer){
+            
+            if (firstPointer == null)
+                firstPointer = secondList;
+            else
+
+            if (secondPointer == null)
+                secondPointer = firstList;
+
+            firstPointer = firstPointer.next;
+            secondPointer = secondPointer.next;
+            
+        }
+        
+        return firstPointer;
+    }
+
+
 
 
 }
