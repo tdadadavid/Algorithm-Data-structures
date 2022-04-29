@@ -344,6 +344,10 @@ public class LinkedList {
 
     public SinglyLinkedListNode mergeTwoSortedLists(SinglyLinkedListNode firstList, SinglyLinkedListNode secondList){
 
+        // check if any of the list is null
+        if (firstList == null) return secondList;
+        if (secondList == null) return firstList;
+
         int dummyData = -1;
         SinglyLinkedListNode dummyNode = new SinglyLinkedListNode(dummyData);
         SinglyLinkedListNode mergedList = dummyNode;
@@ -362,11 +366,7 @@ public class LinkedList {
 
         }
 
-        if (firstList != null)
-            dummyNode.next = firstList;
-
-        if (secondList != null)
-            dummyNode.next = secondList;
+        dummyNode.next = firstList != null ? firstList : secondList;
 
         return mergedList.next;
     }
