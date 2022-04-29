@@ -307,9 +307,7 @@ public class LinkedList {
 
 
 
-
-
-    // the better approach
+    // the good approach
     // Space complexity = O(1)
     public SinglyLinkedListNode findMergeNode2(SinglyLinkedListNode firstList, SinglyLinkedListNode secondList){
 
@@ -343,6 +341,35 @@ public class LinkedList {
         return length;
     }
 
+
+    public SinglyLinkedListNode mergeTwoSortedLists(SinglyLinkedListNode firstList, SinglyLinkedListNode secondList){
+
+        int dummyData = -1;
+        SinglyLinkedListNode dummyNode = new SinglyLinkedListNode(dummyData);
+        SinglyLinkedListNode mergedList = dummyNode;
+
+        while(firstList != null && secondList != null){
+
+            if (firstList.data < secondList.data) {
+                dummyNode.next = firstList;
+                firstList = firstList.next;
+            }else{
+                dummyNode.next = secondList;
+                secondList = secondList.next;
+            }
+
+            dummyNode = dummyNode.next;
+
+        }
+
+        if (firstList != null)
+            dummyNode.next = firstList;
+
+        if (secondList != null)
+            dummyNode.next = secondList;
+
+        return mergedList.next;
+    }
 
 
 }
