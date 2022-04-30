@@ -15,7 +15,7 @@ public class Solution {
                     newNode.next = linkedListNode;
                     return newNode;
                 }else{
-                    insert(linkedListNode, newNode, data);
+                    insert(linkedListNode, newNode);
                     return pointer;
                 }
             }
@@ -23,19 +23,38 @@ public class Solution {
             linkedListNode = linkedListNode.next;
         }
 
-        if (linkedListNode.data > data) insert(linkedListNode, newNode, data);
+        if (linkedListNode.data > data) insert(linkedListNode, newNode);
         else linkedListNode.next = newNode;
 
         return pointer;
     }
 
 
-    public static void insert(DoublyLinkedListNode linkedListNode, DoublyLinkedListNode newNode, int data) {
+    public static void insert(DoublyLinkedListNode linkedListNode, DoublyLinkedListNode newNode) {
         DoublyLinkedListNode previousNode = linkedListNode.prev;
         previousNode.next = newNode;
         newNode.next = linkedListNode;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class DoublyLinkedListNode {
     public int data;
@@ -69,5 +88,26 @@ class DoublyLinkedList {
         }
 
         this.tail = node;
+    }
+
+    public DoublyLinkedListNode reverse(DoublyLinkedListNode head){
+
+        if (head == null) return null;
+
+        DoublyLinkedListNode currentNode = head;
+        DoublyLinkedListNode previousNode;
+        DoublyLinkedListNode newHead = head;
+
+        while (currentNode != null){
+
+            previousNode = currentNode.prev;
+            currentNode.prev = currentNode.next;
+            currentNode.next = previousNode;
+
+            newHead = currentNode;
+            currentNode = currentNode.next;
+        }
+
+        return newHead;
     }
 }
