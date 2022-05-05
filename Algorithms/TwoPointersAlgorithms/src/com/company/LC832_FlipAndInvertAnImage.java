@@ -14,8 +14,7 @@ public class LC832_FlipAndInvertAnImage {
             lenOfRow = image[i].length;
 
             // Taking note of odd lengths of arrays
-            if ((lenOfRow) % 2 != 0)
-                image[i][(lenOfRow /2)] = image[i][(lenOfRow/2)] == 0 ?  1 :  0;
+            if ((lenOfRow) % 2 != 0) image[i][(lenOfRow /2)] = image[i][(lenOfRow/2)] == 0 ?  1 :  0;
 
             --lenOfRow;
 

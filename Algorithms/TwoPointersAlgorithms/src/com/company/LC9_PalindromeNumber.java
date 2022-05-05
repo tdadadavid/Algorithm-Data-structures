@@ -25,7 +25,7 @@ public class LC9_PalindromeNumber {
     // Time complexity = O(log n)
     // Space complexity = O(1)
     // The problem with this approach is that
-    // if the reversed int is greater than INTTEGER.MAXVALUE
+    // if the reversed int is greater than INTEGER.MAXVALUE
     // there will with be an overflow error because the
     // computer won't be able to handle that large value
     private static boolean isPalindrome(int num){
@@ -55,7 +55,7 @@ public class LC9_PalindromeNumber {
     // Time complexity = O(log )
     // Space complexity = O(1)
     // This approach solves the above problem. How?
-    // Debug and see for yourself ..
+    // Debug and see for yourself ...
     private static boolean isPalindrom(int x){
 
         // if x is less than zero return false eg

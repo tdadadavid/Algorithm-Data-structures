@@ -1,5 +1,6 @@
-package com.company;
+package Tests;
 
+import com.company.LC2000_ReversePrefixWord;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
