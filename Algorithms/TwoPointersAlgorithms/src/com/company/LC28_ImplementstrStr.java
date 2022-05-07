@@ -17,7 +17,8 @@ public class LC28_ImplementstrStr {
 
         for (int i = 0; i < haystack.length(); i++){
 
-            // check if the current character is equal to the character in the needle
+            // check if the current character is equal to the
+            // character in the needle
             if (haystackArr[haystackPointer] == needleArr[needlePointer]){
 
                 // get the length of the needle
@@ -25,8 +26,8 @@ public class LC28_ImplementstrStr {
 
                 int j = haystackPointer;
 
-                // loop through the needle array checking each character against
-                // each character in the haystack array.
+                // loop through the needle array checking each
+                // character againsteach character in the haystack array.
                 while(needlePointer >= 0){
                     // check if we've exceeded the length of the haystack
                     if (j >= haystackArr.length) return -1;
@@ -35,15 +36,13 @@ public class LC28_ImplementstrStr {
                     if (haystackArr[j] != needleArr[needlePointer]) break;
 
                     // if we've reached the end of the loop return
-                    // the current position in the hayStackArr
+                    // the current position in the hayStack
                     if (needlePointer == lengthOfNeedle) return i;
 
                     needlePointer++;
                     j++;
                 }
-
                 needlePointer = 0;
-
             }
             haystackPointer++;
         }
