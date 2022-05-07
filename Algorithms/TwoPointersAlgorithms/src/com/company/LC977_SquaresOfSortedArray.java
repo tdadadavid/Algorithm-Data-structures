@@ -99,8 +99,7 @@ public class LC977_SquaresOfSortedArray {
         for (int i = nums.length - 1; i >= 0; i--){
             // check if the first element is greater than the last
             if (Math.abs(nums[left]) > Math.abs(nums[right])) {
-                // store the square of the first element
-                // at the last index
+                // store the square of the first element at the last index
                 result[i] = nums[left] * nums[left];
                 // shift the pointer by one
                 left++;

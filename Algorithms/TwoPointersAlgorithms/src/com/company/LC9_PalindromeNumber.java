@@ -52,7 +52,7 @@ public class LC9_PalindromeNumber {
         return rev == num;
     }
 
-    // Time complexity = O(log )
+    // Time complexity = O(log n)
     // Space complexity = O(1)
     // This approach solves the above problem. How?
     // Debug and see for yourself ...

@@ -20,7 +20,6 @@ public class LC905_SortArrayByParity {
 
         }
 
-
         return nums;
     }
 
