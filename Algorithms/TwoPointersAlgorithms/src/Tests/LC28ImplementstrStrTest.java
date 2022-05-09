@@ -12,13 +12,13 @@ class LC28ImplementstrStrTest {
     void needleIsFound(){
         LC28_ImplementstrStr test = new LC28_ImplementstrStr();
 
-        assertEquals(2 , test.strStr("hello", "ll"));
-        assertEquals(-1 , test.strStr("aaaaa", "bba"));
-        assertEquals(0 , test.strStr("hello", ""));
-        assertEquals(0 , test.strStr("", "ba"));
-        assertEquals(0 , test.strStr("a", "a"));
-        assertEquals(-1 , test.strStr("mississippi", "issipi"));
-        assertEquals(4 , test.strStr("mississippi", "issippi"));
+//        assertEquals(2 , test.strStr2("hello", "ll"));
+//        assertEquals(-1 , test.strStr2("aaaaa", "bba"));
+//        assertEquals(0 , test.strStr2("hello", ""));
+//        assertEquals(0 , test.strStr2("", "ba"));
+//        assertEquals(0 , test.strStr2("a", "a"));
+//        assertEquals(-1 , test.strStr2("mississippi", "issipi"));
+        assertEquals(4 , test.strStr2("mississippi", "issippi"));
 
     }
 }
