@@ -32,8 +32,7 @@ public class LC189_RotateArray {
 
     public void rotate2(int[] nums, int k){
 
-        if (nums.length-1 == 0) return;
-        if (k == 0) return;
+        if (nums.length-1 == 0 || k == 0 ) return;
 
         k = k % nums.length -1;
         int leftPointer = 0, rightPointer = nums.length-1;
@@ -44,16 +43,14 @@ public class LC189_RotateArray {
             nums[rightPointer++] = temp;
         }
 
-        leftPointer = 0;
-        rightPointer = k-1;
+        leftPointer = 0; rightPointer = k-1;
         while (leftPointer < rightPointer){
             int temp = nums[leftPointer];
             nums[leftPointer++] = nums[rightPointer];
             nums[rightPointer++] = temp;
         }
 
-        leftPointer = k;
-        rightPointer = nums.length-1;
+        leftPointer = k; rightPointer = nums.length-1;
         while (leftPointer < rightPointer){
             int temp = nums[leftPointer];
             nums[leftPointer++] = nums[rightPointer];
