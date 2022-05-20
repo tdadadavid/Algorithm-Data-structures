@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Stack;
 
 public class LC496_NextGreaterElementI {
 
@@ -62,5 +63,34 @@ public class LC496_NextGreaterElementI {
         }
 
         return result;
+    }
+
+
+    public int[] nextGreaterElement2(int[] nums1, int[] nums2){
+
+        HashMap<Integer,Integer> elementToIndex = new HashMap<>();
+        Stack<Integer> smallerNumbers = new Stack<>();
+
+        for (int i = 0; i < nums1.length; i++){
+            elementToIndex.put(nums1[i], i);
+        }
+
+        int[] results = new int[nums1.length];
+
+        Arrays.fill(results, -1);
+
+        for (int current : nums2) {
+
+            while (!smallerNumbers.empty() && current > smallerNumbers.peek()) {
+                int value = smallerNumbers.pop();
+                int index = elementToIndex.get(value);
+                results[index] = current;
+            }
+
+            if (elementToIndex.containsKey(current))
+                smallerNumbers.push(current);
+        }
+
+        return results;
     }
 }
