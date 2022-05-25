@@ -10,6 +10,7 @@ class LC2073TimeNeededToBuyTicketsTest {
 
         assertEquals(6, test.timeRequiredToBuy2(new int[]{2,3,2}, 2));
         assertEquals(8, test.timeRequiredToBuy2(new int[]{5,1,1,1}, 0));
+        assertEquals(10, test.timeRequiredToBuy2(new int[]{2,9,3,4}, 2));
     }
 
 }
