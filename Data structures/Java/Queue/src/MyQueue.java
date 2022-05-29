@@ -1,10 +1,10 @@
 import java.util.*;
 
 /**
- *  A Queue is a fifo data structure, meaning the first element
+ *  A Queue is a FIFO data structure, meaning the first element
  *  that gets into the queue gets out first (first in first out)
  *
- *  OPERATION IN A QUEUE
+ *  OPERATIONS IN A QUEUE
  *
  *  1. Enqueue: Adds an element to the front of the queue.
  *      Time complexity: Constant time O(1).
@@ -16,7 +16,7 @@ import java.util.*;
  * 3. Peek: Same as Dequeue (returns null if there is no element in the queue).
  *
  * 4. Poll: Returns first element in the queue (returns null queue is empty)
- *          Doesn't remove the element *
+ *          Doesn't remove the element
  *     Time complexity: Constant time O(1)
  *
  *  Classes that implement Queues in Java
@@ -44,7 +44,7 @@ import java.util.*;
 public class MyQueue {
     public static void main(String[] args){
 
-        ArrayQueue<Integer> numbers = new ArrayQueue<>(7);
+        StackQueue<Integer> numbers = new StackQueue<>();
         numbers.enqueue(20);
         numbers.enqueue(10);
         numbers.enqueue(30);
@@ -94,6 +94,7 @@ public class MyQueue {
         // should throw illegalStateException since
         // there is no element in the queue
 
+        // will throw an error.
         System.out.println(numbers.dequeue());
 
         System.out.println(numbers);

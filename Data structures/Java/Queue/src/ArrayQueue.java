@@ -7,7 +7,6 @@
 // Here I'm using an array to make a queue
 
 import java.util.Arrays;
-import java.util.NoSuchElementException;
 
 public class ArrayQueue<E> {
 
