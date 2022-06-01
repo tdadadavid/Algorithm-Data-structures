@@ -38,7 +38,8 @@ public class StackQueue<E> {
     public E dequeue(){
         if (isEmpty()) throw new IllegalStateException("Queue is empty");
 
-        List<E> keeper = new ArrayList<>();
+        List<E> keeper = getKeeper();
+
         while (!store.isEmpty()){
             E top = store.pop();
             keeper.add(top);
@@ -58,10 +59,14 @@ public class StackQueue<E> {
         return front;
     }
 
+    private ArrayList<E> getKeeper() {
+        return new ArrayList<>();
+    }
+
     public E poll(){
         if (isEmpty()) return null;
 
-        List<E> keeper = new ArrayList<>();
+        List<E> keeper = getKeeper();
         while (!store.isEmpty()){
             E top = store.pop();
             keeper.add(top);
