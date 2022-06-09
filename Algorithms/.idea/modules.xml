@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/SortingAlgorithms/SortingAlgorithms.iml" filepath="$PROJECT_DIR$/SortingAlgorithms/SortingAlgorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/StringsAlgorithms/StringsAlgorithms.iml" filepath="$PROJECT_DIR$/StringsAlgorithms/StringsAlgorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/TwoPointersAlgorithms/TwoPointersAlgorithms.iml" filepath="$PROJECT_DIR$/TwoPointersAlgorithms/TwoPointersAlgorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recursion/recursion.iml" filepath="$PROJECT_DIR$/recursion/recursion.iml" />
     </modules>
   </component>
 </project>
