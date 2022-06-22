@@ -5,6 +5,8 @@ public class Factorial {
         System.out.println(result);
     }
 
+
+
     public static int recursiveFactorial(int n){
         if (n < 0)
             throw new IllegalStateException("Number must be greater than or equal to 0");
@@ -21,7 +23,8 @@ public class Factorial {
      * @return accumulator
      */
     public static int tailRecursionFactorial(int n, int accumulator){
-        if (n < 0) throw new  IllegalStateException("Number must be greater than or equal to zero");
+        if (n < 0)
+            throw new  IllegalStateException("Number must be greater than or equal to zero");
 
         if (n == 0) return accumulator;
         else return tailRecursionFactorial(n-1, accumulator * n);
