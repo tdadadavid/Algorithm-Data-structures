@@ -179,8 +179,9 @@ public class Trees {
         }
     }
 
+
     //My own way(which is awful)
-//    public boolean contains(int value) throws IllegalArgumentException {
+/*    public boolean contains(int value) throws IllegalArgumentException {
 //        boolean flag = false;
 //        Node currentNode = root;
 //
@@ -210,5 +211,5 @@ public class Trees {
 ////        }
 //
 //        return flag;
-//    }
+**/
 }
