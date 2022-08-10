@@ -1,4 +1,4 @@
-package com.company;
+package solutions;
 
 public class LC557_ReverseWordInAString3 {
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-package com.company;
+package solutions;
 
 public class LC1662_CheckIfTwoStringArraysAreEquivalent {
     public static void main(String[] args) {

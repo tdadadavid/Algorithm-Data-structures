@@ -14,7 +14,7 @@ import java.util.Queue;
  *
  * This question is practically a sliding window algorithm
  * [t1,t2,t3,t4,t5,t6,t7,t8,t9,t10] where the t -> time ping happened.
- * and each t = 1ms.
+ * and each t is strictly increasing.
  *
  * Also, I am simulating the storage as a queue
  *

@@ -3,12 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Data structures.iml" filepath="$PROJECT_DIR$/.idea/Data structures.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HashTables/HashTables.iml" filepath="$PROJECT_DIR$/HashTables/HashTables.iml" />
-      <module fileurl="file://$PROJECT_DIR$/LinkedList/LinkedList.iml" filepath="$PROJECT_DIR$/LinkedList/LinkedList.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Stacks/Stacks.iml" filepath="$PROJECT_DIR$/Stacks/Stacks.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TicTacToe/TicTacToe.iml" filepath="$PROJECT_DIR$/TicTacToe/TicTacToe.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Trees/Trees.iml" filepath="$PROJECT_DIR$/Trees/Trees.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Tries/Tries.iml" filepath="$PROJECT_DIR$/Tries/Tries.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/HashTables/HashTables.iml" filepath="$PROJECT_DIR$/Java/HashTables/HashTables.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/LinkedList/LinkedList.iml" filepath="$PROJECT_DIR$/Java/LinkedList/LinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/Stacks/Stacks.iml" filepath="$PROJECT_DIR$/Java/Stacks/Stacks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/TicTacToe/TicTacToe.iml" filepath="$PROJECT_DIR$/Java/TicTacToe/TicTacToe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/Trees/Trees.iml" filepath="$PROJECT_DIR$/Java/Trees/Trees.iml" />
     </modules>
   </component>
 </project>

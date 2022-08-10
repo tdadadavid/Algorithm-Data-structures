@@ -1,4 +1,4 @@
-package com.company;
+package solutions;
 
 public class LC1614_MaxNestingDepthOfParenthesis {
     public static void main(String[] args){

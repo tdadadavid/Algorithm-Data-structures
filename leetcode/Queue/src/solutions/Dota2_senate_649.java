@@ -1,4 +1,4 @@
-package com.company;
+package solutions;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -13,8 +13,8 @@ public class Dota2_senate_649 {
     public static String predictPartyVictory(String senate) {
 
         Queue<Character> q = new LinkedList<>();
-        int Radiant = 0, Dire = 0;                              // counters for no of Radiants and Dire
-        int banR = 0, banD = 0;                                 // counters for no of banned Radiants and Dires
+        int Radiant = 0, Dire = 0;                              // counters for no of Radiant and Dire
+        int banR = 0, banD = 0;                                 // counters for no of banned Radiant and Dires
 
         for (char c : senate.toCharArray()) {                    // foreach senator in the senator array
             if (c == 'R') Radiant++;                             // check which senate at a particular iteration

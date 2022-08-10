@@ -1,4 +1,4 @@
-package com.company;
+package solutions;
 
 public class LC520_DetectCapital {
     public static void main(String[] args) {

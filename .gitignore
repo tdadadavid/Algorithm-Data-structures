@@ -1,2 +1,18 @@
 /out
 /.idea/
+/annotations/
+/out/
+starship.toml
+/leetcode/.idea
+/leetcode/out
+/Hackerrank/.idea
+/Hackerrank/out
+/Firecode.io/.idea
+/Firecode.io/out
+/Data structures/.idea
+/Data structures/Java/.idea
+/Data structures/Java/out
+/Algorithms/out
+/Algorithms/.idea
+/Algorithms/FindRepeatedNumber/out
+/Algorithms/FindRepeatedNumber/*.iml

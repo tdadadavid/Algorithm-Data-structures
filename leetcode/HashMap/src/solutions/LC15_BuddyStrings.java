@@ -1,4 +1,4 @@
-package com.company;
+package solutions;
 
 public class LC15_BuddyStrings {
     public static void main(String[] args){

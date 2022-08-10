@@ -26,7 +26,7 @@ public class RaiseToPowerN {
      */
     public static int recursiveRaiseToPower(int value, int exponent){
         if (exponent == 0) return 1;  // Base condition
-        else return (value * recursiveRaiseToPower(value, exponent - 1));
+        else return (value * recursiveRaiseToPower(value, exponent - 1)); // general case
     }
 
     public static int iterativeRaiseToPower(int value, int exponent){

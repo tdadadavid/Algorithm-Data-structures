@@ -1,4 +1,4 @@
-package com.company;
+package solutions;
 
 public class ListNode {
     int val;

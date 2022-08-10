@@ -1,4 +1,4 @@
-package com.company;
+package solutions;
 
 public class LC2011_FindTheValueOfVariableAfterPerformingOperations {
     public static void main(String[] args){

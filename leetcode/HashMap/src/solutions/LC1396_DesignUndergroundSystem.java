@@ -1,8 +1,7 @@
-package com.company;
+package solutions;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Locale;
 
 public class LC1396_DesignUndergroundSystem {
     public static void main(String[] args){

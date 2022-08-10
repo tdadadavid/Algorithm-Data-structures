@@ -1,4 +1,4 @@
-package com.company;
+package solutions;
 
 import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;

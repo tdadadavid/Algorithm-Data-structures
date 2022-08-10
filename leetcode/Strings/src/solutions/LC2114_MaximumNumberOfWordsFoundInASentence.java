@@ -1,4 +1,4 @@
-package com.company;
+package solutions;
 
 public class LC2114_MaximumNumberOfWordsFoundInASentence {
     public static void main(String[] args) {

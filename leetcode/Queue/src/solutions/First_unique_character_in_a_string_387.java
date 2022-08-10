@@ -1,4 +1,4 @@
-package com.company;
+package solutions;
 
 public class First_unique_character_in_a_string_387 {
 

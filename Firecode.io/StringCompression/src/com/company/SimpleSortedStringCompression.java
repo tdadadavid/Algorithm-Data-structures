@@ -14,6 +14,7 @@ public class SimpleSortedStringCompression {
             else {
 
                 if (count<= 1)
+                if (count<= 1)
                     builder.append(input.charAt(i));
                 else
                     builder.append(input.charAt(i))
