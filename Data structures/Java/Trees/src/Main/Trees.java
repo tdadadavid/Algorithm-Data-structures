@@ -65,16 +65,34 @@ public class Trees {
     return false;
   }
 
+  public boolean areSiblings(int left, int right){
+    if (treeIsEmpty()) throw new IllegalStateException("Tree is empty");
+    return areSiblings(this.root, left, right);
+  }
+
+  private boolean areSiblings(Node node, int left, int right){
+    if (node.leftChild == null ||node.rightChild == null) return false;
+
+    if (isLeafNode(node)) return false;
+
+    if(node.leftChild.value == left && node.rightChild.value == right) return true;
+
+    return areSiblings(node.leftChild, left, right) || areSiblings(node.rightChild, left, right);
+  }
+
   public int sumNodes(){
     return this.sumNodes(this.root);
   }
 
-  //TODO work on function "areSiblings"
+  //TC = O(n)
+  //SC = O(1)
   private int sumNodes(Node node){
+
     // Base case.
     if (node == null) return 0;
 
-    return node.value + sumNodes(node.leftChild) + sumNodes(node.rightChild);
+    return node.value +
+            sumNodes(node.leftChild) + sumNodes(node.rightChild);
   }
 
   public boolean contains(int value){
