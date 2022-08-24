@@ -124,35 +124,24 @@ public class Trees {
   }
 
   /**
-   * @description The algorithm is basically anchored on the understanding of the
-   * height of the tree
-   * Height of tree == Height of the root == Number of Edges from the leaf node with the longest edges to the root
+   * @description
+   * Edge Cases
+   * 1. when the tree is empty return 0.
+   * 2. when we reach a leaf node (ie no left and right child) return 1.
    *
-   * Another question to ask is what is the simplest case for this problem?
-   * Answer: when the root is empty (ie a tree with only root) then we return 1
-   *
-   * Understanding this basic concepts coupled with the fact that every node in a
-   * Binary Search Tree is root (except leaves). We can iteratively traverse the
-   * tree checking if every node we encounter is a leaf node, if true increment the number of
-   * leaf nodes else continue till the whole tree is traversed.
-   *
-   * Time complexity: O(n) X, this is wrong the time complexity for this is O(n-squared)
-   * because there is a recursive function inside a loop. this is really bad 😂😂
+   * Time complexity: O(n).
    * Space complexity: O(1)
-   * @param node
-   * @return
+   * @param  node
+   * @return int
    */
   private int countLeaves(Node node) {
-    int numberOfLeafNodes = 0;
+    if(node == null) return 0; // if the tree is empty return 0.
 
-    final int height = height(node); // O(n) time complexity
+    // if we reach a leaf node increase the count by returning 1.
+    if(isLeafNode(node)) return 1;
 
-    for (int i = 0; i <= height; i++) { // O(n) time complexity
-      if (isLeafNode(node)) return numberOfLeafNodes + 1; // O(1) time complexity
-      numberOfLeafNodes = countLeaves(node.leftChild) + countLeaves(node.rightChild); //O(n) time complexity.
-    }
-
-    return numberOfLeafNodes;
+    // recursively check the left and the right child.
+    return countLeaves(node.leftChild) + countLeaves(node.rightChild);
   }
 
 
