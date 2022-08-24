@@ -70,6 +70,7 @@ public class Trees {
     return areSiblings(this.root, left, right);
   }
 
+  //TODO draw the diagram for this algorithm
   private boolean areSiblings(Node node, int left, int right){
     if (node.leftChild == null ||node.rightChild == null) return false;
 
@@ -135,7 +136,8 @@ public class Trees {
    * tree checking if every node we encounter is a leaf node, if true increment the number of
    * leaf nodes else continue till the whole tree is traversed.
    *
-   * Time complexity: O(n)
+   * Time complexity: O(n) X, this is wrong the time complexity for this is O(n-squared)
+   * because there is a recursive function inside a loop. this is really bad 😂😂
    * Space complexity: O(1)
    * @param node
    * @return
