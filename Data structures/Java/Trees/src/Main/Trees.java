@@ -1,6 +1,9 @@
 package Main;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /**
  * This a Binary Search Tree class.
@@ -68,6 +71,52 @@ public class Trees {
   public boolean areSiblings(int left, int right){
     if (treeIsEmpty()) throw new IllegalStateException("Tree is empty");
     return areSiblings(this.root, left, right);
+  }
+
+  public Object[] averageOfLevel(){
+    return this.averageOfLevels(this.root).toArray();
+  }
+
+  private List<Double> averageOfLevels(Node node){
+    List<Double> results = new ArrayList<>(); //for storing the average of each levels
+    if (node == null) return results; // if the tree is empty return 0.
+
+    Queue<Node> queue = new LinkedList<>(); // to keep track of nodes in the same level.
+    queue.add(node); // add the root node of the tree.
+
+    // when the queue is empty it means
+    // we have traversed all the levels in the tree.
+    while(!queue.isEmpty()){
+      // to hold the sum of all nodes in the particular node.
+      double levelSum = 0;
+
+      // to know the number of nodes in that level
+      int level = queue.size();
+
+
+      // while we are at this level
+      for (int i = 0; i < level; i++){
+        // this holds current node stored in the queue.
+        Node currentNode = queue.poll();
+
+        // add the value of current node to
+        // keep track of the sum of nodes in this level
+        levelSum += currentNode.value;
+
+        // if this node has a left child or right child add the
+        // child to the queue. The sum will be calculated later.
+        if(currentNode.leftChild != null) queue.add(currentNode.leftChild);
+        if(currentNode.rightChild != null) queue.add(currentNode.rightChild);
+      }
+
+      // calculate the average of the sum of nodes at this level.
+      double average = levelSum / level;
+
+      // add the average to the results.
+      results.add(average);
+    }
+
+    return results;
   }
 
   //TODO draw the diagram for this algorithm

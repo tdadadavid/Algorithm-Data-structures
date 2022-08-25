@@ -1,22 +1,23 @@
 package Main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Test {
   public static void main(String[] args) {
     Trees tree = new Trees();
-//    tree.insert(940);
-//    tree.insert(1000);
-//    tree.insert(100);
-//    tree.insert(170);
-//    tree.insert(40);
-//    tree.insert(230);
-//    tree.insert(-12);
-//    tree.insert(52);
-//    tree.insert(93);
-//    tree.insert(94);
-//    tree.insert(190);
-//    tree.insert(900);
+    tree.insert(940);
+    tree.insert(1000);
+    tree.insert(100);
+    tree.insert(170);
+    tree.insert(40);
+    tree.insert(230);
+    tree.insert(-12);
+    tree.insert(52);
+    tree.insert(93);
+    tree.insert(94);
+    tree.insert(190);
+    tree.insert(900);
 
     Trees secondTree = new Trees();
     secondTree.insert(90);
@@ -98,9 +99,19 @@ public class Test {
     System.out.println("--------------------------------");
 
     System.out.println("Check if two values are siblings in a tree");
-    System.out.println(tree.areSiblings(-12, 52));
+//    System.out.println(new Trees().areSiblings(0,1));
+    System.out.println(tree.areSiblings(-12902, 290292));
     System.out.println("--------------------------------------------");
 
+    System.out.println("Find the average of nodes at level.");
+    Trees averageTree = new Trees();
+    averageTree.insert(3);
+    averageTree.insert(2);
+    averageTree.insert(20);
+    averageTree.insert(15);
+    averageTree.insert(7);
+    System.out.println(Arrays.toString(averageTree.averageOfLevel()));
+    System.out.println("------------------------------------");
 
   }
 }
