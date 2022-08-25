@@ -77,6 +77,12 @@ public class Trees {
     return this.averageOfLevels(this.root).toArray();
   }
 
+  /**
+   * LeetcodeNo: 637
+   * Link: https://leetcode.com/problems/average-of-levels-in-binary-tree/
+   * @param node
+   * @return
+   */
   private List<Double> averageOfLevels(Node node){
     List<Double> results = new ArrayList<>(); //for storing the average of each levels
     if (node == null) return results; // if the tree is empty return 0.
