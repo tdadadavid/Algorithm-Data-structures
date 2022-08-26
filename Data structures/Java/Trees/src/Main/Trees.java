@@ -68,6 +68,79 @@ public class Trees {
     return false;
   }
 
+  private int minDepthBFS(Node node){
+    Queue<Node> queue =  new LinkedList<>();
+
+    if (node == null) return 0;
+    queue.add(node);
+
+    int minDepth = 1;
+
+    while(!queue.isEmpty()){
+      int size = queue.size();
+
+      while(size > 0){
+        Node currentNode = queue.poll();
+
+        if(isLeafNode(currentNode)) return minDepth;
+
+        if (currentNode.leftChild != null) queue.add(currentNode.leftChild);
+        if (currentNode.rightChild != null) queue.add(currentNode.rightChild);
+        size--;
+      }
+
+      minDepth++;
+    }
+
+    return minDepth;
+  }
+
+  private int minDepthDFS(Node node){
+    if(node == null) return 0;
+
+    if(isLeafNode(node)) return 1;
+
+    if(node.leftChild != null) return 1 + minDepthDFS(root.leftChild);
+    if(node.rightChild != null) return 1 + minDepthDFS(root.rightChild);
+
+    return 1 + Math.min(minDepthDFS(root.leftChild), minDepthDFS(root.rightChild));
+  }
+
+  /**
+   *
+   * Question: https://leetcode.com/problems/binary-tree-level-order-traversal/
+   * @param node
+   * @return
+   */
+
+  private List<List<Integer>> breadthFirstSearch(Node node){
+    Queue<Node> queue = new LinkedList<>();
+
+    List<List<Integer>> results = new ArrayList<>();
+
+    if(node == null) return results;
+    queue.add(node);
+
+    while(!queue.isEmpty()){
+      int currentLevel = queue.size();
+
+      List<Integer> store = new ArrayList<>();
+
+      for (int i = 0; i < currentLevel; i++){
+        Node currentNode = queue.poll();
+
+        store.add(currentNode.value);
+
+        if (currentNode.leftChild != null) queue.add(currentNode.leftChild);
+        if (currentNode.rightChild != null) queue.add(currentNode.rightChild);
+      }
+
+      results.add(store);
+    }
+
+    return results;
+  }
+
   public boolean areSiblings(int left, int right){
     if (treeIsEmpty()) throw new IllegalStateException("Tree is empty");
     return areSiblings(this.root, left, right);
