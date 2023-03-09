@@ -2,7 +2,7 @@ package com.king;
 
 public class AVLTree {
 
-    public class AVLNode {
+    public static class AVLNode {
         public int value;
         public AVLNode leftChild;
         public AVLNode rightChild;
@@ -11,6 +11,13 @@ public class AVLTree {
             this.value = value;
             this.leftChild = null;
             this.rightChild = null;
+        }
+
+        @Override
+        public String toString() {
+            return "AVLNode{" +
+                    "value=" + value +
+                    '}';
         }
     }
 
@@ -21,27 +28,28 @@ public class AVLTree {
      * if the val is greater than the parent node, insert to the right
      * if the val is less than parent node, insert to the left.
      */
-    public AVLNode insert(int val, AVLNode currentRootNode){
+    private AVLNode insert(int val, AVLNode currentRootNode){
         AVLNode newNode = new AVLNode(val);
-
-        if (isEmpty())
-            root = newNode;
 
         if (currentRootNode == null)
             return newNode;
 
 
-        if (val >= currentRootNode.value){
+        if (val >= currentRootNode.value)
             currentRootNode.rightChild = insert(val, currentRootNode.rightChild);
-            return currentRootNode;
-        }
+        else
+            currentRootNode.leftChild = insert(val, currentRootNode.leftChild);
 
-        currentRootNode.leftChild = insert(val, currentRootNode.leftChild);
+
         return currentRootNode;
-
     }
 
     public void insert(int val){
+        if (isEmpty()) {
+            root = new AVLNode(val);
+            return;
+        };
+
         insert(val, root);
     }
 
