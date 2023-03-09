@@ -31,26 +31,20 @@ public class AVLTree {
     private AVLNode insert(int val, AVLNode currentRootNode){
         AVLNode newNode = new AVLNode(val);
 
-        if (currentRootNode == null)
-            return newNode;
+        if (isEmpty()) return new AVLNode(val);
 
+        if (currentRootNode == null) return newNode;
 
         if (val >= currentRootNode.value)
             currentRootNode.rightChild = insert(val, currentRootNode.rightChild);
         else
             currentRootNode.leftChild = insert(val, currentRootNode.leftChild);
 
-
         return currentRootNode;
     }
 
     public void insert(int val){
-        if (isEmpty()) {
-            root = new AVLNode(val);
-            return;
-        };
-
-        insert(val, root);
+        root = insert(val, root);
     }
 
     public boolean isEmpty(){

@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class AVLTreeTests {
 
     @Test
-    public void shouldInsertAppropriately(){
+    public void shouldInsert(){
         AVLTree testAVLTree = new AVLTree();
 
         // act
