@@ -2,8 +2,11 @@ package com.king;
 
 public class AVLTree {
 
+    private AVLNode givenRoot;
+
     public static class AVLNode {
         public int value;
+        public int height;
         public AVLNode leftChild;
         public AVLNode rightChild;
 
@@ -11,6 +14,10 @@ public class AVLTree {
             this.value = value;
             this.leftChild = null;
             this.rightChild = null;
+        }
+
+        public boolean isLeafNode(){
+            return this.leftChild == null && this.rightChild == null;
         }
 
         @Override
@@ -40,7 +47,18 @@ public class AVLTree {
         else
             currentRootNode.leftChild = insert(val, currentRootNode.leftChild);
 
+        currentRootNode.height = height(currentRootNode);
+
         return currentRootNode;
+    }
+
+    private int height(AVLNode givenRoot){
+        // return -1 for an empty tree.
+        if (givenRoot == null) return -1;
+
+        if (givenRoot.isLeafNode()) return 0;
+
+        return 1 + Math.max(height(givenRoot.leftChild), height(givenRoot.rightChild));
     }
 
     public void insert(int val){
