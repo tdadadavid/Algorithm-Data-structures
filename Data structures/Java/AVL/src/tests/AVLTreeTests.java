@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 public class AVLTreeTests {
 
     @Test
-    public void shouldInsert(){
+    private void shouldInsert(){
         AVLTree testAVLTree = new AVLTree();
 
         // act
@@ -25,7 +25,7 @@ public class AVLTreeTests {
     }
 
     @Test
-    public void shouldHaveCorrectHeights(){
+    private void shouldHaveCorrectHeights(){
         AVLTree testAVLTree = new AVLTree();
 
         // act
@@ -37,5 +37,21 @@ public class AVLTreeTests {
         assertEquals(1, testAVLTree.root.height);
         assertEquals(0, testAVLTree.root.rightChild.height);
         assertEquals(0, testAVLTree.root.leftChild.height);
+
+        AVLTree testAVLTree2 = new AVLTree();
+
+        testAVLTree2.insert(10);
+        testAVLTree2.insert(20);
+        testAVLTree2.insert(30);
+
+        assertEquals(2, testAVLTree2.root.height);
+        assertEquals(1, testAVLTree2.root.rightChild.height);
+        assertEquals(null, testAVLTree2.root.leftChild);
+        assertEquals(1, testAVLTree2.root.rightChild.height);
     }
+
+//    @Test
+//    private void shouldReBalance(){
+//        AVLTree testTree = new AVLTree();
+//    }
 }

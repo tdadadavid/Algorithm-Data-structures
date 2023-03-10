@@ -49,8 +49,26 @@ public class AVLTree {
 
         currentRootNode.height = height(currentRootNode);
 
+        // balance factor
+        if (isLeftHeavy(currentRootNode)) System.out.println(currentRootNode.value+ " is LEFT HEAVY");
+        else if (isRightHeavy(currentRootNode)) System.out.println(currentRootNode.value + " is RIGHT HEAVY");
+        else System.out.println(currentRootNode.value+ " is balanced");
+
         return currentRootNode;
     }
+
+    private boolean isLeftHeavy(AVLNode node){
+        return balanceFactor(node) > 1;
+    }
+
+    private boolean isRightHeavy(AVLNode node){
+        return balanceFactor(node) < -1;
+    }
+
+    private int balanceFactor(AVLNode node){
+        return height(node.leftChild) - height(node.rightChild);
+    }
+
 
     private int height(AVLNode givenRoot){
         // return -1 for an empty tree.
