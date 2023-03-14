@@ -41,8 +41,8 @@ public class AVLTreeTests {
         AVLTree testAVLTree2 = new AVLTree();
 
         testAVLTree2.insert(10);
-        testAVLTree2.insert(20);
         testAVLTree2.insert(30);
+        testAVLTree2.insert(20);
 
         assertEquals(2, testAVLTree2.root.height);
         assertEquals(1, testAVLTree2.root.rightChild.height);
@@ -50,8 +50,31 @@ public class AVLTreeTests {
         assertEquals(1, testAVLTree2.root.rightChild.height);
     }
 
-//    @Test
-//    private void shouldReBalance(){
-//        AVLTree testTree = new AVLTree();
-//    }
+    @Test
+    public void shouldGiveUsMaxDepth(){
+        AVLTree testTree = new AVLTree();
+
+        // act
+//        testTree.insert(100);
+//        testTree.insert(50);
+//        testTree.insert(20);
+//        testTree.insert(80);
+//        testTree.insert(60);
+//        testTree.insert(300);
+//        testTree.insert(200);
+//        testTree.insert(400);
+//        testTree.insert(350);
+//        testTree.insert(500);
+//        testTree.insert(450);
+
+        testTree.insert(1);
+        testTree.insert(2);
+        testTree.insert(3);
+        testTree.insert(4);
+        testTree.insert(5);
+
+
+
+        assertEquals(5, testTree.maximumDepth());
+    }
 }

@@ -47,14 +47,45 @@ public class AVLTree {
         else
             currentRootNode.leftChild = insert(val, currentRootNode.leftChild);
 
-        currentRootNode.height = height(currentRootNode);
+//        currentRootNode.height = height(currentRootNode);
 
-        // balance factor
-        if (isLeftHeavy(currentRootNode)) System.out.println(currentRootNode.value+ " is LEFT HEAVY");
-        else if (isRightHeavy(currentRootNode)) System.out.println(currentRootNode.value + " is RIGHT HEAVY");
-        else System.out.println(currentRootNode.value+ " is balanced");
+//        balance(currentRootNode);
 
         return currentRootNode;
+    }
+
+
+    public int maximumDepth(){
+        return 1 + this.maximumDepth(root, 0,0);
+    }
+
+    private int maximumDepth(AVLNode node, int currentDepth, int maximumDepth){
+
+        // check if the current is null
+        if (node == null) return maximumDepth;
+
+        if (currentDepth > maximumDepth)
+            maximumDepth = currentDepth;
+
+        int leftDepth = maximumDepth(node.leftChild, currentDepth+1, maximumDepth);
+        int rightDepth = maximumDepth(node.rightChild, currentDepth+1, maximumDepth);
+
+        return Math.max(leftDepth, rightDepth);
+    }
+
+
+    private void balance(AVLNode node){
+        // balance factor
+        if (isLeftHeavy(node)) {
+            if (balanceFactor(node.leftChild) > 0)
+                System.out.println("Right Rotate " + node.leftChild.value);
+            System.out.println("Left Rotate " + node.value);
+        }
+        else if (isRightHeavy(node)) {
+            if (balanceFactor(node.rightChild) > 0)
+                System.out.println("Left Rotate " + node.rightChild.value);
+            System.out.println("Right Rotate " + node.value);
+        }
     }
 
     private boolean isLeftHeavy(AVLNode node){
