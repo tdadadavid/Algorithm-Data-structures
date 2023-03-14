@@ -46,6 +46,8 @@ public class Trees {
     // Check how to implement insert recursively...TODO
   }
 
+
+
   public boolean find(int value) {
     // Edge cases
     // The tree is null --> null
